@@ -32,7 +32,7 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":51717720}};
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- EmailJS — invia il form a info@ilariavisciglia.it senza backend -->
-  <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <style>
 /* ============================================================
@@ -945,7 +945,7 @@ const EJS_TEMPLATE  = 'template_iu8dbft';
 const EJS_TEMPLATE2 = 'template_40bt12h';
 const EJS_KEY       = 'rtvzkUWVS33mOUt0R';
 
-emailjs.init({ publicKey: EJS_KEY });
+if (window.emailjs) emailjs.init({ publicKey: EJS_KEY });
 
 document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
@@ -978,13 +978,16 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       to_email:      'info@ilariavisciglia.it'
     });
 
-    // 2. Conferma automatica al cliente
-    await emailjs.send(EJS_SERVICE, EJS_TEMPLATE2, {
-      from_name:     nome,
-      from_email:    email,
-      tipo_progetto: tipo,
-      budget:        budget,
-    });
+    // 2. Conferma automatica al cliente (se fallisce, la richiesta è comunque arrivata)
+    try {
+      await emailjs.send(EJS_SERVICE, EJS_TEMPLATE2, {
+        from_name:     nome,
+        from_email:    email,
+        to_email:      email,
+        tipo_progetto: tipo,
+        budget:        budget,
+      });
+    } catch (e2) { console.warn('Conferma al cliente non inviata:', e2); }
 
     // Successo
     document.getElementById('form-ok').style.display = 'block';
@@ -996,6 +999,10 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   } catch (err) {
     console.error('EmailJS error:', err);
     document.getElementById('form-err').style.display = 'block';
+    // Fallback: apre il client di posta con il messaggio già compilato
+    const subj = encodeURIComponent('Richiesta dal sito — ' + tipo);
+    const body = encodeURIComponent('Nome: ' + nome + ' ' + cognome + '\nEmail: ' + email + '\nTipo progetto: ' + tipo + '\nBudget: ' + budget + '\n\n' + messaggio);
+    window.location.href = 'mailto:info@ilariavisciglia.it?subject=' + subj + '&body=' + body;
 
   } finally {
     btn.disabled        = false;
