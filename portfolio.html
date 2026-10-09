@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <!-- Iubenda Cookie Banner -->
+<script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {"siteId":4001214,"cookiePolicyId":51717720,"storage":{"useSiteId":true}};
+_iub.csLangConfiguration = {"it":{"cookiePolicyId":51717720}};
+</script>
+<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4001214.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio Siti Web a Roma | Ilaria Visciglia</title>
+  <meta name="description" content="I progetti realizzati da Ilaria Visciglia, web designer a Roma: e-commerce, siti con AI integrata, piattaforme booking e configuratori 3D.">
+  <meta name="keywords" content="portfolio web designer roma, siti web realizzati, progetti web design roma">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.ilariavisciglia.it/portfolio.html">
+  <meta name="author" content="Ilaria Visciglia">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Portfolio Siti Web a Roma | Ilaria Visciglia">
+  <meta property="og:description" content="Progetti web realizzati per clienti a Roma e in Italia: e-commerce, AI, piattaforme e configuratori 3D.">
+  <meta property="og:image" content="https://www.ilariavisciglia.it/images/photo2.jpg">
+  <meta property="og:url" content="https://www.ilariavisciglia.it/portfolio.html">
+  <meta property="og:locale" content="it_IT">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="images/logo-cropped.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cs.iubenda.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Bodoni+Moda:ital,wght@0,400;0,500;1,400;1,500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   DESIGN SYSTEM — "ATELIER INDEX"
+   Ilaria Visciglia — restyle grafico, stessi testi/immagini
+   ============================================================ */
+:root {
+  --gold: #C9A227;        /* oro caldo — accento primario */
+  --gold2: #E7C766;       /* oro chiaro / hover */
+  --cream: #F4EBDA;       /* avorio caldo — testo su fondo scuro */
+  --dark: #221610;        /* fondo pagina — marrone espresso scurissimo */
+  --mid: #2C1D14;         /* pannelli rialzati */
+  --mid2: #362519;        /* pannelli secondari */
+  --red: #7B3524;         /* accento caldo secondario (mogano) */
+  --border: rgba(244,235,218,.14);
+  --line: rgba(244,235,218,.18);
+}
+@font-face {
+  font-family: 'TBJ Black Gold';
+  src: url('fonts/TBJBlackGold-Regular.woff2') format('woff2'),
+       url('fonts/TBJBlackGold-Regular.otf') format('opentype');
+  font-weight: 400; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: 'TBJ Black Gold';
+  src: url('fonts/TBJBlackGold-Italic.woff2') format('woff2'),
+       url('fonts/TBJBlackGold-Italic.otf') format('opentype');
+  font-weight: 400; font-style: italic; font-display: swap;
+}
+/* Il font TBJ Black Gold è a pagamento (Creative Market/Etsy): acquistalo e carica i file
+   in /fonts/ con questi nomi esatti per attivarlo automaticamente in tutto il sito.
+   Nel frattempo il sito usa Bodoni Moda come alternativa gratuita dallo stile molto simile. */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--dark);
+  color: var(--cream);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+}
+::selection { background: var(--gold); color: var(--dark); }
+a { cursor: pointer; }
+button { cursor: pointer; font-family: inherit; }
+
+/* paper-grain overlay (sostituisce il vecchio noise, stesso ruolo) */
+#noise {
+  position: fixed; inset: 0; z-index: 9990; pointer-events: none; opacity: .05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px;
+}
+/* niente cursore custom: torna il cursore di sistema */
+#cursor, #cursor-ring { display: none !important; }
+
+/* ── PRELOADER ── */
+#preloader {
+  position: fixed; inset: 0; z-index: 9999; background: var(--dark);
+  display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1.6rem;
+  transition: opacity .7s ease, visibility .7s ease;
+}
+#preloader.hide { opacity: 0; visibility: hidden; }
+.pre-logo { font-family: 'TBJ Black Gold', 'Bodoni Moda', serif; font-style: italic; font-weight: 500; font-size: 2.6rem; color: var(--gold); }
+.pre-bar { width: 180px; height: 2px; background: var(--mid2); overflow: hidden; }
+.pre-bar-fill { height: 100%; background: var(--gold); width: 0%; animation: barFill 1.6s cubic-bezier(.4,0,.2,1) .3s forwards; }
+@keyframes barFill { to { width: 100%; } }
+.pre-counter { font-family: 'Space Grotesk'; font-size: .78rem; letter-spacing: .3em; color: rgba(242,239,228,.9); }
+
+/* ── NAVBAR ── */
+nav#navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 1.3rem 3rem; display: flex; align-items: center; justify-content: space-between;
+  background: rgba(16,22,26,.72); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border);
+}
+.nav-logo { text-decoration: none; display: flex; align-items: center; }
+.nav-logo img { height: 48px; width: auto; display: block; }
+.nav-menu { display: flex; gap: 2.4rem; list-style: none; align-items: center; }
+.nav-menu > li { position: relative; }
+.nav-menu a {
+  text-decoration: none; color: rgba(242,239,228,.9);
+  font-size: .82rem; letter-spacing: .04em; font-weight: 500;
+  transition: color .25s; display: flex; align-items: center; gap: .3rem;
+}
+.nav-menu a:hover, .nav-menu a.active { color: var(--gold); }
+.nav-caret { font-size: .6rem; }
+.nav-has-dropdown:hover .nav-dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
+.nav-dropdown {
+  position: absolute; top: 130%; left: 50%; transform: translate(-50%,4px);
+  opacity: 0; visibility: hidden; transition: .25s;
+  background: var(--mid); border: 1px solid var(--border); min-width: 240px; z-index: 50;
+}
+.nav-dropdown-inner { display: flex; flex-direction: column; padding: .5rem; }
+.nav-dropdown-inner a { padding: .65rem .9rem; font-size: .8rem; color: rgba(242,239,228,.9); white-space: nowrap; }
+.nav-dropdown-inner a:hover { background: var(--mid2); color: var(--gold); }
+.nav-cta-btn {
+  position: relative; background: var(--gold); color: var(--dark); border: none;
+  font-family: 'Space Grotesk'; font-weight: 600; font-size: .8rem;
+  padding: .65rem 1.5rem; text-decoration: none; transition: transform .2s, background .2s;
+}
+.nav-cta-btn:hover { background: var(--gold2); transform: translate(-2px,-2px); }
+.nav-right { display: flex; align-items: center; gap: 1.2rem; }
+.menu-trigger {
+  display: flex; align-items: center; gap: .6rem; background: transparent; border: 1px solid var(--border);
+  color: var(--cream); font-family: 'Space Grotesk'; font-weight: 600; font-size: .8rem; letter-spacing: .04em;
+  padding: .6rem 1.1rem; transition: border-color .25s, color .25s;
+}
+.menu-trigger:hover { border-color: var(--gold); color: var(--gold); }
+.menu-trigger-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); transition: transform .3s; }
+.menu-trigger:hover .menu-trigger-dot { transform: scale(1.4); }
+.hamburger { display: none; background: none; border: none; flex-direction: column; gap: 5px; z-index: 1001; position: relative; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--cream); transition: .3s; }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* ── MENU BUSSOLA ── */
+.compass-overlay {
+  position: fixed; inset: 0; z-index: 6000; background: rgba(20,13,9,.94); backdrop-filter: blur(10px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1.6rem;
+  opacity: 0; visibility: hidden; transition: opacity .45s ease, visibility .45s ease;
+}
+.compass-overlay.open { opacity: 1; visibility: visible; }
+.compass-close {
+  position: absolute; top: 1.8rem; right: 2.2rem; background: transparent; border: 1px solid var(--border);
+  color: var(--cream); width: 44px; height: 44px; font-size: 1.1rem; transition: border-color .25s, color .25s, transform .25s;
+}
+.compass-close:hover { border-color: var(--gold); color: var(--gold); transform: rotate(90deg); }
+.compass-wrap { position: relative; width: min(560px, 82vw); aspect-ratio: 1; touch-action: none; user-select: none; }
+.compass-ring-svg { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.compass-ring-svg circle { fill: none; }
+.compass-ring-svg .cr-outer { stroke: var(--border); stroke-width: 1; }
+.compass-ring-svg .cr-inner { stroke: rgba(201,162,39,.35); stroke-width: 1; }
+.compass-ring-svg .cr-tick { stroke: rgba(244,235,218,.3); stroke-width: 1; }
+.compass-ring-svg .cr-tick-major { stroke: var(--gold); stroke-width: 1.5; }
+.compass-dial { position: absolute; inset: 0; cursor: grab; }
+.compass-dial.dragging { cursor: grabbing; }
+.compass-dial.dragging .compass-item { transition: none; }
+.compass-item {
+  position: absolute; top: 50%; left: 50%; width: 150px; margin-left: -75px; margin-top: -14px;
+  text-align: center; text-decoration: none; transition: transform .5s cubic-bezier(.22,1,.36,1);
+  pointer-events: auto; -webkit-user-drag: none; user-select: none;
+}
+.compass-item-label {
+  display: inline-block; font-family: 'TBJ Black Gold', 'Bodoni Moda', serif; font-size: 1.05rem; font-style: italic;
+  color: var(--cream); letter-spacing: .02em; padding: .3rem .7rem; border-bottom: 1px solid transparent; transition: color .25s, border-color .25s;
+}
+.compass-item:hover .compass-item-label, .compass-item.compass-active .compass-item-label { color: var(--gold); border-color: var(--gold); }
+.compass-needle {
+  position: absolute; top: 50%; left: 50%; width: 2px; height: 42%; background: linear-gradient(to top, var(--gold), transparent);
+  transform: translate(-50%,-100%); pointer-events: none; transform-origin: bottom center; transition: transform .5s cubic-bezier(.22,1,.36,1);
+}
+.compass-dial.dragging .compass-needle { transition: none; }
+.compass-center {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 74px; height: 74px; border-radius: 50%;
+  background: var(--gold); color: var(--dark); display: flex; align-items: center; justify-content: center;
+  font-family: 'TBJ Black Gold', 'Bodoni Moda', serif; font-size: 1.2rem; pointer-events: none;
+}
+.compass-hint { font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(244,235,218,.9); }
+@media (max-width: 640px) { .compass-item-label { font-size: .9rem; } .compass-item { width: 120px; margin-left: -60px; } }
+
+/* ── BOTTONI (motivo firma: doppia stampa/offset invece dello scasso clip-path) ── */
+.btn-gold, .btn-outline, .btn-outline-gold, .cta-submit, .service-hero-actions a, .service-cta-band-btns a, .cta-band-btns a {
+  position: relative; display: inline-block; font-family: 'Space Grotesk'; font-weight: 600;
+  font-size: .82rem; letter-spacing: .03em; text-decoration: none; border-radius: 0;
+}
+.btn-gold {
+  background: var(--gold); color: var(--dark); padding: .85rem 2rem; border: none; transition: transform .25s;
+}
+.btn-gold::before {
+  content: ''; position: absolute; inset: 0; border: 1.5px solid var(--gold);
+  transform: translate(6px,6px); z-index: -1; transition: transform .25s;
+}
+.btn-gold:hover { transform: translate(-3px,-3px); }
+.btn-gold:hover::before { transform: translate(9px,9px); }
+
+.btn-outline, .btn-outline-gold {
+  background: transparent; color: var(--cream); padding: .8rem 1.9rem; border: 1.5px solid var(--border); transition: .25s;
+}
+.btn-outline:hover, .btn-outline-gold:hover { border-color: var(--gold); color: var(--gold); }
+.btn-outline::after { content: ' →'; }
+
+/* ── ETICHETTA DI SEZIONE ── */
+.section-tag {
+  font-family: 'Space Grotesk'; font-size: .74rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.3rem; display: flex; align-items: center; gap: .8rem; font-weight: 600;
+}
+.section-tag::before { content: '—'; }
+
+/* ── MARQUEE ── */
+.marquee-section, .marquee-bar {
+  padding: 1.1rem 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden;
+}
+.marquee-track { display: flex; gap: 3rem; animation: marquee 28s linear infinite; white-space: nowrap; width: max-content; }
+.marquee-track span { font-family: 'Space Grotesk'; font-weight: 600; font-size: 1rem; letter-spacing: .08em; color: rgba(242,239,228,.9); }
+.marquee-track .dot { color: var(--gold); }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── CTA BAND generica ── */
+.cta-band {
+  padding: 100px 3rem; max-width: 1200px; margin: 0 auto; text-align: center;
+}
+.cta-band h2 { font-family: 'TBJ Black Gold', 'Bodoni Moda'; font-weight: 500; font-size: clamp(2rem,4.5vw,3.6rem); line-height: 1.15; }
+.cta-band h2 em, .cta-left h2 em, .about-title em, .services-title em, .manifesto-title em, h1 em, h2 em { font-style: italic; color: var(--gold); }
+.cta-band-btns, .service-cta-band-btns { display: flex; gap: 1.2rem; justify-content: center; margin-top: 2.2rem; flex-wrap: wrap; }
+
+/* ── REVEAL ── */
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-l { opacity: 0; transform: translateX(-26px); transition: opacity .7s ease, transform .7s ease; }
+.reveal-l.visible { opacity: 1; transform: translateX(0); }
+.reveal-r { opacity: 0; transform: translateX(26px); transition: opacity .7s ease, transform .7s ease; }
+.reveal-r.visible { opacity: 1; transform: translateX(0); }
+
+/* ── FOOTER ── */
+footer.site-footer {
+  border-top: 1px solid var(--border); padding: 2.6rem 3rem;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.2rem;
+}
+footer.site-footer p { font-size: .76rem; color: rgba(242,239,228,.9); }
+.footer-nav { display: flex; gap: 1.8rem; }
+.footer-nav a { font-size: .76rem; color: rgba(242,239,228,.9); text-decoration: none; transition: color .25s; }
+.footer-nav a:hover { color: var(--gold); }
+.footer-legal { display: flex; gap: 1.2rem; }
+.footer-legal a { font-size: .72rem; color: rgba(242,239,228,.9); text-decoration: underline; }
+
+/* ── AGENTE AI ── */
+#agent-bubble {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 5000; width: 56px; height: 56px;
+  background: var(--gold); display: flex; align-items: center; justify-content: center; transition: transform .25s;
+}
+#agent-bubble::before { content:''; position:absolute; inset:0; border:1.5px solid var(--gold); transform:translate(6px,6px); z-index:-1; }
+#agent-bubble:hover { transform: translate(-3px,-3px); }
+#agent-bubble svg { width: 22px; height: 22px; fill: var(--dark); }
+.agent-pulse { position: absolute; width: 8px; height: 8px; background: var(--red); border-radius: 50%; top: 6px; right: 6px; animation: agentPulse 2s infinite; }
+@keyframes agentPulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.5;transform:scale(1.3)} }
+#agent-panel {
+  position: fixed; bottom: 6.6rem; right: 2rem; z-index: 5000; width: 370px; max-width: calc(100vw - 2rem);
+  background: var(--mid); border: 1px solid var(--border);
+  display: flex; flex-direction: column; transform: translateY(16px); opacity: 0; pointer-events: none; transition: all .3s ease;
+}
+#agent-panel.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+.agent-hdr { padding: 1rem 1.1rem; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: .8rem; }
+.agent-av { width: 32px; height: 32px; background: var(--gold); display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk'; font-weight: 700; font-size: .82rem; color: var(--dark); flex-shrink: 0; }
+.agent-hdr strong { font-size: .82rem; display: block; }
+.agent-hdr span { font-size: .68rem; color: var(--gold); }
+#agent-close { margin-left: auto; background: none; border: none; color: rgba(242,239,228,.9); font-size: .9rem; }
+.agent-msgs { flex: 1; max-height: 300px; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: .6rem; }
+.amsg { max-width: 86%; padding: .6rem .85rem; font-size: .82rem; line-height: 1.5; }
+.amsg.bot { background: var(--mid2); align-self: flex-start; color: rgba(242,239,228,.9); }
+.amsg.user { background: var(--gold); color: var(--dark); align-self: flex-end; font-weight: 500; }
+.amsg.typing { color: rgba(242,239,228,.9); font-style: italic; }
+.agent-inp { display: flex; gap: .5rem; padding: .8rem 1rem; border-top: 1px solid var(--border); }
+#agent-input { flex: 1; background: transparent; border: none; border-bottom: 1px solid var(--border); color: var(--cream); font-family: 'Space Grotesk'; font-size: .82rem; outline: none; padding: .4rem 0; }
+#agent-input:focus { border-bottom-color: var(--gold); }
+#agent-input::placeholder { color: rgba(242,239,228,.9); }
+#agent-send { background: var(--gold); border: none; color: var(--dark); width: 30px; height: 30px; font-size: .9rem; }
+
+/* ── UTILITY: numero grande "watermark" (sostituisce il big-type gold) ── */
+.wm-num, .srv-num, .page-hero-bg-text, .manifesto-bg-text, .srv-hero-bg-text {
+  font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; color: transparent;
+  -webkit-text-stroke: 1px var(--border);
+}
+
+@media (max-width: 1024px) { }
+@media (max-width: 768px) {
+  nav#navbar { padding: .9rem 1.2rem; }
+  .nav-logo img { height: 40px; }
+  .hamburger { display: flex; z-index: 1003; }
+  .nav-cta-btn { display: none; }
+  .nav-menu {
+    display: none; position: fixed; inset: 0; width: 100vw; height: 100vh;
+    background: var(--dark); flex-direction: column; align-items: center; justify-content: center;
+    gap: 2.2rem; z-index: 1002;
+  }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { font-size: 1.3rem; }
+  .nav-dropdown { position: static; opacity: 1; visibility: visible; transform: none; background: none; border: none; display: none; text-align: center; margin-top: 1rem; }
+  .nav-has-dropdown.open .nav-dropdown { display: flex; }
+  .nav-dropdown-inner { align-items: center; gap: .6rem; }
+  footer.site-footer { flex-direction: column; text-align: center; }
+}
+/* ===== PORTFOLIO ===== */
+.port-hero { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.6rem; padding: 160px 3rem 70px; max-width: 900px; margin: 0 auto; }
+.port-hero-eyebrow { font-size: .74rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: .2rem; font-weight: 600; }
+.port-hero-title { font-family: 'TBJ Black Gold', 'Bodoni Moda'; font-size: clamp(2.6rem,5.5vw,5rem); font-weight: 400; line-height: 1.05; }
+.port-hero-title em { font-style: italic; color: var(--gold); }
+.port-hero-right { max-width: 560px; display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+.port-hero-count { font-family: 'Big Shoulders Display'; font-weight: 900; font-size: 3.4rem; color: var(--gold); line-height: 1; }
+.port-hero-right p { font-size: .9rem; line-height: 1.65; color: rgba(242,239,228,.9); }
+
+.port-filters { display: flex; justify-content: center; gap: .7rem; flex-wrap: wrap; padding: 0 3rem 2.6rem; max-width: 1300px; margin: 0 auto; }
+.port-filter { background: transparent; border: 1px solid var(--border); color: rgba(242,239,228,.9); padding: .5rem 1.2rem; font-family: 'Space Grotesk'; font-size: .8rem; transition: .25s; }
+.port-filter:hover { border-color: var(--gold); color: var(--gold); }
+.port-filter.active { background: var(--gold); border-color: var(--gold); color: var(--dark); font-weight: 600; }
+
+.port-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.3rem; padding: 0 3rem 100px; max-width: 1300px; margin: 0 auto; }
+.work-item { position: relative; display: block; overflow: hidden; border: 1px solid var(--border); text-decoration: none; color: var(--cream); min-height: 320px; transition: border-color .3s, transform .3s; }
+.work-item.hidden { display: none; }
+.work-item:hover { border-color: var(--gold); transform: translateY(-4px); }
+.work-item--featured { grid-column: span 2; min-height: 420px; }
+.work-item-bg { position: absolute; inset: 0; z-index: 0; }
+.work-item-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, var(--dark) 15%, transparent 80%); }
+.work-item-inner { position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column; justify-content: space-between; padding: 1.6rem; }
+.work-top { display: flex; justify-content: space-between; align-items: center; }
+.work-num { font-family: 'Big Shoulders Display'; font-weight: 900; font-size: 1.3rem; color: rgba(242,239,228,.9); }
+.work-arrow { color: var(--gold); font-size: 1.2rem; transition: .25s; }
+.work-item:hover .work-arrow { transform: translate(3px,-3px); }
+.ai-badge { display: inline-block; background: var(--gold); color: var(--dark); font-size: .68rem; font-weight: 700; letter-spacing: .05em; padding: .25rem .7rem; margin-bottom: .8rem; }
+.work-tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: .8rem; }
+.work-tag { font-size: .66rem; letter-spacing: .04em; border: 1px solid var(--border); padding: .2rem .55rem; color: var(--gold); }
+.work-title { font-family: 'TBJ Black Gold', 'Bodoni Moda'; font-weight: 500; font-size: 1.5rem; margin-bottom: .5rem; }
+.work-item--featured .work-title { font-size: 2rem; }
+.work-desc { font-size: .85rem; line-height: 1.6; color: rgba(242,239,228,.9); margin-bottom: .9rem; max-width: 520px; }
+.work-link { font-size: .78rem; color: var(--gold); font-weight: 600; }
+@media (max-width: 800px) { .port-grid { grid-template-columns: 1fr; } .work-item--featured { grid-column: span 1; } }
+
+.approach-strip { padding: 90px 3rem 110px; max-width: 1300px; margin: 0 auto; border-top: 1px solid var(--border); text-align: center; }
+.approach-strip > .section-tag { justify-content: center; }
+.approach-strip > .section-tag::before { display: none; }
+.approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2.6rem; }
+.approach-item { position: relative; overflow: hidden; border-top: 2px solid var(--border); padding-top: 1.4rem; transition: border-color .25s; counter-increment: ap-count; }
+.approach-item::before { content: counter(ap-count, decimal-leading-zero); position: absolute; top: 1rem; left: 50%; transform: translateX(-50%); font-family: 'Big Shoulders Display'; font-weight: 900; font-size: 6rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(244,235,218,.14); z-index: 0; transition: -webkit-text-stroke-color .3s; }
+.approach-item:hover::before { -webkit-text-stroke-color: rgba(201,162,39,.4); }
+.approach-grid { counter-reset: ap-count; }
+.approach-title, .approach-body { position: relative; z-index: 1; }
+.approach-item:hover { border-color: var(--gold); }
+.work-item--ai { border-color: rgba(217,143,78,.35); }
+.approach-num { display: none; }
+.approach-title { font-family: 'TBJ Black Gold', 'Bodoni Moda'; font-weight: 500; font-size: 1.3rem; margin: .6rem 0 .8rem; line-height: 1.3; }
+.approach-title em { font-style: italic; color: var(--gold); }
+.approach-body { font-size: .88rem; line-height: 1.65; color: rgba(242,239,228,.9); }
+@media (max-width: 900px) { .approach-grid { grid-template-columns: 1fr; } }
+
+
+/* ── PERFORMANCE: effetti pesanti disattivati su mobile ── */
+@media (max-width:768px){
+  #noise{display:none}
+  #navbar,nav,.compass-overlay{-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  #navbar{background:rgba(20,13,9,.96)!important}
+}
+@media (prefers-reduced-motion:reduce){#noise{display:none}.hero-bg-canvas{display:none}}
+.footer-services{flex-wrap:wrap;justify-content:center;gap:.5rem 1.4rem;margin-top:.4rem}
+footer.site-footer{flex-wrap:wrap}
+
+/* ── LEGGIBILITÀ + RESPONSIVE (override) ── */
+body{font-weight:450;-webkit-font-smoothing:antialiased}
+p,li,.work-desc,.hero-desc{font-weight:500;line-height:1.75}
+h1,h2,h3{text-wrap:balance}
+img,video,canvas,svg{max-width:100%}
+html,body{overflow-x:hidden}
+@media (max-width:768px){
+  body{font-size:17px}
+  p,li{font-size:1.02rem}
+  section,.port-grid,.port-filters,footer.site-footer{padding-left:1.25rem!important;padding-right:1.25rem!important}
+  h1,h2,h3,p,.work-bottom,.work-top{overflow-wrap:anywhere;word-break:normal}
+  .work-title{font-size:1.25rem!important;overflow-wrap:anywhere}
+  .work-item,.work-item--featured{min-width:0;max-width:100%;min-height:300px}
+  .port-grid{justify-items:stretch;text-align:center}
+  .work-item-inner{align-items:center;text-align:center}
+  .work-bottom{display:flex;flex-direction:column;align-items:center;text-align:center}
+  .work-tags{justify-content:center}
+  .work-desc{max-width:100%}
+  .port-filters{justify-content:center}
+}
+</style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Portfolio — Ilaria Visciglia",
+    "url": "https://www.ilariavisciglia.it/portfolio.html",
+    "about": {
+      "@type": "ProfessionalService",
+      "name": "Ilaria Visciglia — Web Designer",
+      "url": "https://www.ilariavisciglia.it/"
+    },
+    "description": "I progetti realizzati da Ilaria Visciglia, web designer a Roma: e-commerce, siti con AI integrata, piattaforme booking e configuratori 3D."
+  }
+  </script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ilariavisciglia.it/"},{"@type":"ListItem","position":2,"name":"Portfolio","item":"https://www.ilariavisciglia.it/portfolio.html"}]}</script>
+</head>
+<body>
+
+<div id="noise"></div>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="images/logo-cropped.png" alt="Ilaria Visciglia"></a>
+  <div class="nav-right">
+    <a href="contatti.html" class="nav-cta-btn">Lavoriamo insieme</a>
+    <button class="menu-trigger" id="menu-trigger" aria-label="Apri il menu">
+      <span>Menu</span>
+      <div class="menu-trigger-dot"></div>
+    </button>
+  </div>
+</nav>
+
+<!-- MENU BUSSOLA -->
+<div class="compass-overlay" id="compass-overlay">
+  <button class="compass-close" id="compass-close" aria-label="Chiudi il menu">✕</button>
+  <div class="compass-wrap">
+    <svg class="compass-ring-svg" viewBox="0 0 600 600">
+      <circle class="cr-outer" cx="300" cy="300" r="280"/>
+      <circle class="cr-inner" cx="300" cy="300" r="230"/>
+      <line class="cr-tick-major" x1="300.0" y1="20.0" x2="300.0" y2="38.0"/><line class="cr-tick" x1="329.3" y1="21.5" x2="328.2" y2="31.5"/><line class="cr-tick" x1="358.2" y1="26.1" x2="356.1" y2="35.9"/><line class="cr-tick" x1="386.5" y1="33.7" x2="383.4" y2="43.2"/><line class="cr-tick" x1="413.9" y1="44.2" x2="409.8" y2="53.3"/><line class="cr-tick-major" x1="440.0" y1="57.5" x2="431.0" y2="73.1"/><line class="cr-tick" x1="464.6" y1="73.5" x2="458.7" y2="81.6"/><line class="cr-tick" x1="487.4" y1="91.9" x2="480.7" y2="99.4"/><line class="cr-tick" x1="508.1" y1="112.6" x2="500.6" y2="119.3"/><line class="cr-tick" x1="526.5" y1="135.4" x2="518.4" y2="141.3"/><line class="cr-tick-major" x1="542.5" y1="160.0" x2="526.9" y2="169.0"/><line class="cr-tick" x1="555.8" y1="186.1" x2="546.7" y2="190.2"/><line class="cr-tick" x1="566.3" y1="213.5" x2="556.8" y2="216.6"/><line class="cr-tick" x1="573.9" y1="241.8" x2="564.1" y2="243.9"/><line class="cr-tick" x1="578.5" y1="270.7" x2="568.5" y2="271.8"/><line class="cr-tick-major" x1="580.0" y1="300.0" x2="562.0" y2="300.0"/><line class="cr-tick" x1="578.5" y1="329.3" x2="568.5" y2="328.2"/><line class="cr-tick" x1="573.9" y1="358.2" x2="564.1" y2="356.1"/><line class="cr-tick" x1="566.3" y1="386.5" x2="556.8" y2="383.4"/><line class="cr-tick" x1="555.8" y1="413.9" x2="546.7" y2="409.8"/><line class="cr-tick-major" x1="542.5" y1="440.0" x2="526.9" y2="431.0"/><line class="cr-tick" x1="526.5" y1="464.6" x2="518.4" y2="458.7"/><line class="cr-tick" x1="508.1" y1="487.4" x2="500.6" y2="480.7"/><line class="cr-tick" x1="487.4" y1="508.1" x2="480.7" y2="500.6"/><line class="cr-tick" x1="464.6" y1="526.5" x2="458.7" y2="518.4"/><line class="cr-tick-major" x1="440.0" y1="542.5" x2="431.0" y2="526.9"/><line class="cr-tick" x1="413.9" y1="555.8" x2="409.8" y2="546.7"/><line class="cr-tick" x1="386.5" y1="566.3" x2="383.4" y2="556.8"/><line class="cr-tick" x1="358.2" y1="573.9" x2="356.1" y2="564.1"/><line class="cr-tick" x1="329.3" y1="578.5" x2="328.2" y2="568.5"/><line class="cr-tick-major" x1="300.0" y1="580.0" x2="300.0" y2="562.0"/><line class="cr-tick" x1="270.7" y1="578.5" x2="271.8" y2="568.5"/><line class="cr-tick" x1="241.8" y1="573.9" x2="243.9" y2="564.1"/><line class="cr-tick" x1="213.5" y1="566.3" x2="216.6" y2="556.8"/><line class="cr-tick" x1="186.1" y1="555.8" x2="190.2" y2="546.7"/><line class="cr-tick-major" x1="160.0" y1="542.5" x2="169.0" y2="526.9"/><line class="cr-tick" x1="135.4" y1="526.5" x2="141.3" y2="518.4"/><line class="cr-tick" x1="112.6" y1="508.1" x2="119.3" y2="500.6"/><line class="cr-tick" x1="91.9" y1="487.4" x2="99.4" y2="480.7"/><line class="cr-tick" x1="73.5" y1="464.6" x2="81.6" y2="458.7"/><line class="cr-tick-major" x1="57.5" y1="440.0" x2="73.1" y2="431.0"/><line class="cr-tick" x1="44.2" y1="413.9" x2="53.3" y2="409.8"/><line class="cr-tick" x1="33.7" y1="386.5" x2="43.2" y2="383.4"/><line class="cr-tick" x1="26.1" y1="358.2" x2="35.9" y2="356.1"/><line class="cr-tick" x1="21.5" y1="329.3" x2="31.5" y2="328.2"/><line class="cr-tick-major" x1="20.0" y1="300.0" x2="38.0" y2="300.0"/><line class="cr-tick" x1="21.5" y1="270.7" x2="31.5" y2="271.8"/><line class="cr-tick" x1="26.1" y1="241.8" x2="35.9" y2="243.9"/><line class="cr-tick" x1="33.7" y1="213.5" x2="43.2" y2="216.6"/><line class="cr-tick" x1="44.2" y1="186.1" x2="53.3" y2="190.2"/><line class="cr-tick-major" x1="57.5" y1="160.0" x2="73.1" y2="169.0"/><line class="cr-tick" x1="73.5" y1="135.4" x2="81.6" y2="141.3"/><line class="cr-tick" x1="91.9" y1="112.6" x2="99.4" y2="119.3"/><line class="cr-tick" x1="112.6" y1="91.9" x2="119.3" y2="99.4"/><line class="cr-tick" x1="135.4" y1="73.5" x2="141.3" y2="81.6"/><line class="cr-tick-major" x1="160.0" y1="57.5" x2="169.0" y2="73.1"/><line class="cr-tick" x1="186.1" y1="44.2" x2="190.2" y2="53.3"/><line class="cr-tick" x1="213.5" y1="33.7" x2="216.6" y2="43.2"/><line class="cr-tick" x1="241.8" y1="26.1" x2="243.9" y2="35.9"/><line class="cr-tick" x1="270.7" y1="21.5" x2="271.8" y2="31.5"/>
+    </svg>
+    <div class="compass-dial" id="compass-dial">
+      <a href="index.html" class="compass-item" draggable="false" data-angle="270" data-page="index.html"><span class="compass-item-label">Home</span></a>
+      <a href="chi-sono.html" class="compass-item" draggable="false" data-angle="0" data-page="chi-sono.html"><span class="compass-item-label">Chi Sono</span></a>
+      <a href="portfolio.html" class="compass-item" draggable="false" data-angle="90" data-page="portfolio.html"><span class="compass-item-label">Portfolio</span></a>
+      <a href="contatti.html" class="compass-item" draggable="false" data-angle="180" data-page="contatti.html"><span class="compass-item-label">Contatti</span></a>
+    </div>
+    <div class="compass-needle" id="compass-needle"></div>
+    <div class="compass-center">IV</div>
+  </div>
+  <p class="compass-hint">Trascina la bussola per esplorare</p>
+</div>
+
+<!-- HERO -->
+<div class="port-hero">
+  <div class="port-hero-left">
+    <div class="port-hero-eyebrow">Lavori selezionati</div>
+    <h1 class="port-hero-title">Il mio<br><em>Portfolio</em></h1>
+  </div>
+  <div class="port-hero-right">
+    <div class="port-hero-count">08</div>
+    <p>Progetti realizzati con una sola ossessione: superare le aspettative. Ogni sito è una storia di sfide, soluzioni creative e tecnologia al servizio degli obiettivi del cliente.</p>
+  </div>
+</div>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span>Portfolio</span><span class="dot">✦</span><span>Web Design</span><span class="dot">✦</span>
+    <span>AI Projects</span><span class="dot">✦</span><span>E-commerce</span><span class="dot">✦</span>
+    <span>Platforms</span><span class="dot">✦</span><span>Booking</span><span class="dot">✦</span>
+    <span>Portfolio</span><span class="dot">✦</span><span>Web Design</span><span class="dot">✦</span>
+    <span>AI Projects</span><span class="dot">✦</span><span>E-commerce</span><span class="dot">✦</span>
+    <span>Platforms</span><span class="dot">✦</span><span>Booking</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- FILTERS -->
+<div class="port-filters">
+  <button class="port-filter active" data-filter="all">Tutti</button>
+  <button class="port-filter" data-filter="ai">AI</button>
+  <button class="port-filter" data-filter="platform">Piattaforme</button>
+  <button class="port-filter" data-filter="booking">Booking</button>
+  <button class="port-filter" data-filter="ecommerce">E-commerce</button>
+  <button class="port-filter" data-filter="corporate">Corporate</button>
+</div>
+
+<!-- PROJECTS -->
+<div class="port-grid">
+
+  <!-- LOGOVEX — FEATURED AI -->
+  <a href="https://logovex.com" target="_blank" class="work-item work-item--featured work-item--ai reveal" data-cat="ai">
+    <div class="work-item-bg" style="background:linear-gradient(135deg,#2e1c0e,#221610)"></div>
+    <div class="work-item-overlay"></div>
+    <div class="work-item-inner">
+      <div class="work-top">
+        <span class="work-num">01</span>
+        <span class="work-arrow">↗</span>
+      </div>
+      <div class="work-bottom">
+        <div class="ai-badge">Progetto AI avanzato</div>
+        <div class="work-tags">
+          <span class="work-tag">AI · DALL-E 3</span>
+          <span class="work-tag">Stripe</span>
+          <span class="work-tag">Node.js</span>
+          <span class="work-tag">Railway</span>
+        </div>
+        <h2 class="work-title">logovex.com</h2>
+        <p class="work-desc">Piattaforma di ultima generazione per la generazione di loghi tramite intelligenza artificiale. L'utente descrive il suo brand, paga con Stripe e riceve in pochi secondi un logo professionale creato da DALL-E 3. Backend Node.js su Railway, SMTP Aruba per la consegna via email.</p>
+        <span class="work-link">Visita il sito ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- EMIFOTOOTTICA -->
+  <a href="https://emifotoottica.it" target="_blank" class="work-item reveal" data-cat="ecommerce">
+    <div class="work-item-bg" style="background:linear-gradient(135deg,#182420,#221610)"></div>
+    <div class="work-item-overlay"></div>
+    <div class="work-item-inner">
+      <div class="work-top"><span class="work-num">02</span><span class="work-arrow">↗</span></div>
+      <div class="work-bottom">
+        <div class="work-tags"><span class="work-tag">Realtà Aumentata</span><span class="work-tag">AR.js</span><span class="work-tag">E-commerce</span></div>
+        <h2 class="work-title">emifotoottica.it</h2>
+        <p class="work-desc">Ottica con funzionalità innovativa: prova virtuale degli occhiali in realtà aumentata direttamente dal browser, senza app da scaricare.</p>
+        <span class="work-link">Visita il sito ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- FASHIONHARP -->
+  <a href="https://fashionharp.com" target="_blank" class="work-item reveal" data-cat="platform">
+    <div class="work-item-bg" style="background:linear-gradient(135deg,#2a1712,#221610)"></div>
+    <div class="work-item-overlay"></div>
+    <div class="work-item-inner">
+      <div class="work-top"><span class="work-num">03</span><span class="work-arrow">↗</span></div>
+      <div class="work-bottom">
+        <div class="work-tags"><span class="work-tag">Fashion Platform</span><span class="work-tag">Supabase Auth</span><span class="work-tag">Dashboard</span></div>
+        <h2 class="work-title">fashionharp.com</h2>
+        <p class="work-desc">Piattaforma moda completa: editoriali, runway coverage, registrazione utenti con dashboard personale, profili professionali e gestione file. Costruita su Supabase.</p>
+        <span class="work-link">Visita il sito ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- LA PERLA NERA -->
+  <a href="https://laperlanera.eu" target="_blank" class="work-item reveal" data-cat="booking">
+    <div class="work-item-bg" style="background:linear-gradient(135deg,#201810,#221610)"></div>
+    <div class="work-item-overlay"></div>
+    <div class="work-item-inner">
+      <div class="work-top"><span class="work-num">04</span><span class="work-arrow">↗</span></div>
+      <div class="work-bottom">
+        <div class="work-tags"><span class="work-tag">Booking System</span><span class="work-tag">Airbnb Sync</span><span class="work-tag">Stripe</span></div>
+        <h2 class="work-title">laperlanera.eu</h2>
+        <p class="work-desc">Casa vacanza a Roma con sistema di prenotazione custom: calendario sincronizzato con Airbnb in tempo reale, prezzi dinamici stagionali, pagamenti Stripe e notifiche email automatiche.</p>
+        <span class="work-link">Visita il sito ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- LABORATORI WRAPPING -->
+  <a href="https://laboratoriwrapping.it" target="_blank" class="work-item reveal" data-cat="ecommerce">
+    <div class="work-item-bg" style="background:linear-gradient(135deg,#241d10,#221610)"></div>
+    <div class="work-item-overlay"></div>
+    <div class="work-item-inner">
+      <div class="work-top"><span class="work-num">05</span><span class="work-arrow">↗</span></div>
+      <div class="work-bottom">
+        <div class="work-tags"><span class="work-tag">Car Wrapping</span><span class="work-tag">Configuratore 3D</span><span class="work-tag">WIP</span></div>
+        <h2 class="work-title">laboratoriwrapping.it</h2>
+        <p class="work-desc">Sito energico e dinamico per azienda di car wrapping. In sviluppo: un configuratore interattivo che permette ai clienti di visualizzare il wrapping sulla propria auto in tempo reale.</p>
+        <span class="work-link">Visita il sito ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- GFMENTALCOACH -->
+  <a href="https://gfmentalcoach.it" target="_blank" class="work-item reveal" data-cat="corporate">
+    <div class="work-item-bg" style="background:linear-gradient(135deg,#221816,#221610)"></div>
+    <div class="work-item-overlay"></div>
+    <div class="work-item-inner">
+      <div class="work-top"><span class="work-num">06</span><span class="work-arrow">↗</span></div>
+      <div class="work-bottom">
+        <div class="work-tags"><span class="work-tag">Mental Coach</span><span class="work-tag">Personal Brand</span></div>
+        <h2 class="work-title">gfmentalcoach.it</h2>
+        <p class="work-desc">Sito professionale per una mental coach specializzata nel mondo equestre. Design raffinato che valorizza la personalità del professionista e comunica autorevolezza.</p>
+        <span class="work-link">Visita il sito ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- CONSORZIO -->
+  <a href="https://consorzioserviziesvilupporoma.it" target="_blank" class="work-item reveal" data-cat="corporate">
+    <div class="work-item-bg" style="background:linear-gradient(135deg,#1a2018,#221610)"></div>
+    <div class="work-item-overlay"></div>
+    <div class="work-item-inner">
+      <div class="work-top"><span class="work-num">07</span><span class="work-arrow">↗</span></div>
+      <div class="work-bottom">
+        <div class="work-tags"><span class="work-tag">Istituzionale</span><span class="work-tag">Multi-servizi</span></div>
+        <h2 class="work-title">consorzioserviziesvilupporoma.it</h2>
+        <p class="work-desc">Sito istituzionale per un consorzio di servizi a Roma. Struttura chiara e professionale per comunicare credibilità, competenze e servizi diversificati a un pubblico B2B.</p>
+        <span class="work-link">Visita il sito ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- EMILIO FRANCHINI -->
+  <a href="https://emiliofranchini.com" target="_blank" rel="noopener" class="work-item reveal" data-cat="corporate">
+    <div class="work-item-bg" style="background:linear-gradient(135deg,#2a1a10,#221610)"></div>
+    <div class="work-item-overlay"></div>
+    <div class="work-item-inner">
+      <div class="work-top"><span class="work-num">08</span><span class="work-arrow">↗</span></div>
+      <div class="work-bottom">
+        <div class="work-tags"><span class="work-tag">Sito Professionale</span><span class="work-tag">Personal Brand</span></div>
+        <h2 class="work-title">emiliofranchini.com</h2>
+        <p class="work-desc">Sito web personalizzato per professionista. Design su misura per valorizzare l'identità del brand e massimizzare la presenza online nel proprio settore.</p>
+        <span class="work-link">Visita il sito ↗</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- VUCANDLES -->
+  <a href="https://vucandles.com" target="_blank" rel="noopener" class="work-item reveal" data-cat="ecommerce">
+    <div class="work-item-bg" style="background:linear-gradient(135deg,#2b1c10,#221610)"></div>
+    <div class="work-item-overlay"></div>
+    <div class="work-item-inner">
+      <div class="work-top"><span class="work-num">09</span><span class="work-arrow">↗</span></div>
+      <div class="work-bottom">
+        <div class="work-tags"><span class="work-tag">E-commerce</span><span class="work-tag">Candele artigianali</span></div>
+        <h2 class="work-title">vucandles.com</h2>
+        <p class="work-desc">E-commerce di candele artigianali, bilingue italiano e inglese. Catalogo curato, acquisto semplice e un'atmosfera calda che racconta il prodotto fin dalla prima schermata.</p>
+        <span class="work-link">Visita il sito ↗</span>
+      </div>
+    </div>
+  </a>
+
+</div>
+
+<!-- APPROACH -->
+<section class="approach-strip">
+  <div class="section-tag reveal">Il mio approccio</div>
+  <div class="approach-grid">
+    <div class="approach-item reveal">
+      <div class="approach-num">01</div>
+      <h3 class="approach-title">Ogni progetto è <em>unico</em></h3>
+      <p class="approach-body">Nessun template, nessun copia-incolla. Ogni sito nasce da zero, pensato per il brand specifico, con soluzioni che non esistono altrove.</p>
+    </div>
+    <div class="approach-item reveal">
+      <div class="approach-num">02</div>
+      <h3 class="approach-title"><em>Tecnologia</em> al servizio del business</h3>
+      <p class="approach-body">L'innovazione non è fine a se stessa. Ogni scelta tecnica — AI, AR, sistemi complessi — esiste perché porta valore reale agli obiettivi del cliente.</p>
+    </div>
+    <div class="approach-item reveal">
+      <div class="approach-num">03</div>
+      <h3 class="approach-title">Design che <em>converte</em></h3>
+      <p class="approach-body">La bellezza senza funzione non è design. Ogni elemento visivo ha uno scopo: guidare l'utente verso l'azione che conta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band reveal">
+  <h2>Il prossimo<br><em>potresti essere tu.</em></h2>
+  <div class="cta-band-btns">
+    <a href="index.html#servizi-roma" class="btn-outline-gold">Esplora i Servizi</a>
+    <a href="contatti.html" class="btn-gold">Iniziamo il progetto</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+ <p>© 2026 Ilaria Visciglia — Web Designer & AI Integrator — Roma, Italia</p>
+<p>P.IVA 18671571000</p>
+  <nav class="footer-nav">
+    <a href="chi-sono.html">Chi Sono</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contatti.html">Contatti</a>
+  </nav>
+  <nav class="footer-nav footer-services" aria-label="Servizi di web design a Roma">
+    <a href="siti-web.html">Creazione Siti Web</a>
+    <a href="ecommerce.html">E-commerce</a>
+    <a href="agente-ai-email.html">Assistente AI per Email</a>
+    <a href="agente-ai-whatsapp.html">Assistente AI per WhatsApp</a>
+    <a href="dashboard.html">Piattaforme e Dashboard</a>
+    <a href="strategia-digitale.html">Strategia Digitale e SEO</a>
+    <a href="campagne-adv.html">Campagne Google e Meta Ads</a>
+  </nav>
+  <div class="footer-legal">
+    <a href="https://www.iubenda.com/privacy-policy/51717720" class="iubenda-white iubenda-noiframe iubenda-embed" title="Privacy Policy">Privacy Policy</a>
+    <a href="https://www.iubenda.com/privacy-policy/51717720/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed" title="Cookie Policy">Cookie Policy</a>
+  </div>
+</footer>
+<script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
+
+<div id="agent-bubble">
+  <div class="agent-pulse"></div>
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/><circle cx="12" cy="12" r="3"/><path d="M8 12a4 4 0 018 0"/></svg>
+</div>
+<div id="agent-panel">
+  <div class="agent-hdr">
+    <div class="agent-av">IV</div>
+    <div><strong>Assistente di Ilaria</strong><span>● Online ora</span></div>
+    <button id="agent-close">✕</button>
+  </div>
+  <div class="agent-msgs" id="agent-messages">
+    <div class="amsg bot">Hai visto qualcosa che ti ha ispirato? Posso dirti di più su qualsiasi progetto! 🎨</div>
+  </div>
+  <div class="agent-inp">
+    <input type="text" id="agent-input" placeholder="Scrivi qui...">
+    <button id="agent-send">→</button>
+  </div>
+</div>
+
+<script>
+/* ══════════════════════════════
+   NAV HAMBURGER
+══════════════════════════════ */
+const hamburgerBtn = document.getElementById('hamburger');
+const navMenuEl = document.getElementById('nav-menu');
+if (hamburgerBtn && navMenuEl) {
+  hamburgerBtn.addEventListener('click', () => {
+    hamburgerBtn.classList.toggle('open');
+    navMenuEl.classList.toggle('open');
+  });
+  document.querySelectorAll('.nav-menu > li > a:not(.nav-dropdown-trigger)').forEach(a => {
+    a.addEventListener('click', () => { hamburgerBtn.classList.remove('open'); navMenuEl.classList.remove('open'); });
+  });
+  document.querySelectorAll('.nav-dropdown-trigger').forEach(t => {
+    t.addEventListener('click', e => {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        t.closest('.nav-has-dropdown').classList.toggle('open');
+      }
+    });
+  });
+}
+
+/* ══════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════ */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal, .reveal-l, .reveal-r').forEach(el => observer.observe(el));
+
+/* ══════════════════════════════
+   AGENTE AI
+══════════════════════════════ */
+
+const bubble = document.getElementById('agent-bubble');
+const panel = document.getElementById('agent-panel');
+if (bubble && panel) {
+  const agentClose = document.getElementById('agent-close');
+  if (agentClose) agentClose.addEventListener('click', () => panel.classList.remove('open'));
+  bubble.addEventListener('click', () => { panel.classList.toggle('open'); if (panel.classList.contains('open')) document.getElementById('agent-input').focus(); });
+  document.getElementById('agent-send').addEventListener('click', sendMsg);
+  document.getElementById('agent-input').addEventListener('keydown', e => { if (e.key === 'Enter') sendMsg(); });
+}
+let history = [];
+function appendMsg(text, role) {
+  const d = document.createElement('div');
+  d.className = 'amsg ' + role;
+  d.textContent = text;
+  const msgs = document.getElementById('agent-messages');
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+  return d;
+}
+async function sendMsg() {
+  const inp = document.getElementById('agent-input');
+  const text = inp.value.trim();
+  if (!text) return;
+  inp.value = '';
+  appendMsg(text, 'user');
+  history.push({ role: 'user', content: text });
+  const typing = appendMsg('...', 'bot typing');
+  try {
+    await new Promise(r=>setTimeout(r,500));
+    const q=text.toLowerCase();
+    let reply='Grazie per il messaggio! Per una risposta precisa scrivi a Ilaria: info@ilariavisciglia.it oppure WhatsApp +39 329 148 9983. Preventivo gratuito.';
+    if(/prezz|cost|quanto|preventiv/.test(q)) reply='Il costo dipende dal progetto: ogni sito è su misura. Scrivi a info@ilariavisciglia.it o su WhatsApp +39 329 148 9983 per un preventivo gratuito.';
+    else if(/ecommerce|e-commerce|negozio|shop/.test(q)) reply='Realizzo e-commerce su misura, veloci e ottimizzati per Google. Vai alla pagina E-commerce oppure contattami per un preventivo gratuito.';
+    else if(/sito|web|landing/.test(q)) reply='Creo siti web su misura a Roma e in tutta Italia, ottimizzati per Google. Scrivimi per un preventivo gratuito!';
+    else if(/whatsapp|email|ai|assistente/.test(q)) reply='Realizzo assistenti AI per WhatsApp ed email che rispondono ai tuoi clienti 24 ore su 24. Contattami per saperne di più.';
+    typing.textContent = reply;
+    typing.classList.remove('typing');
+    history.push({ role: 'assistant', content: reply });
+  } catch {
+    typing.textContent = 'Problema di connessione. Contatta Ilaria direttamente!';
+    typing.classList.remove('typing');
+  }
+}
+/* ══════════════════════════════
+   MENU BUSSOLA
+══════════════════════════════ */
+(function () {
+  const overlay = document.getElementById('compass-overlay');
+  const trigger = document.getElementById('menu-trigger');
+  const closeBtn = document.getElementById('compass-close');
+  const dial = document.getElementById('compass-dial');
+  const ring = document.querySelector('.compass-ring-svg');
+  const needle = document.getElementById('compass-needle');
+  if (!overlay || !dial) return;
+
+  const items = Array.from(dial.querySelectorAll('.compass-item'));
+  const radius = window.innerWidth < 640 ? 130 : 200;
+  let rotation = 0;       // rotazione corrente della bussola (gradi)
+  let dragStartAngle = 0; // angolo del puntatore all'inizio del drag
+  let rotationStart = 0;  // rotazione al momento del pointerdown
+  let dragging = false;
+  let moved = 0;          // distanza totale percorsa dal puntatore (per distinguere click da drag)
+  let hoverIndex = null;  // indice della voce sotto il mouse, se presente
+
+  function currentAngleFor(item) {
+    return parseFloat(item.dataset.angle) + rotation;
+  }
+  function pointNeedle(angle) {
+    if (needle) needle.style.transform = `translate(-50%,-100%) rotate(${angle + 90}deg)`;
+  }
+  function updateNeedle() {
+    if (hoverIndex !== null) {
+      pointNeedle(currentAngleFor(items[hoverIndex]));
+      return;
+    }
+    const activeItem = items.find(it => it.classList.contains('compass-active'));
+    pointNeedle(activeItem ? currentAngleFor(activeItem) : -90);
+  }
+
+  function place() {
+    const current = location.pathname.split('/').pop() || 'index.html';
+    const serviceSubpages = ['siti-web.html','ecommerce.html','dashboard.html','strategia-digitale.html','campagne-adv.html','agente-ai-email.html','agente-ai-whatsapp.html'];
+    const activePage = serviceSubpages.includes(current) ? 'servizi.html' : current;
+    items.forEach(item => {
+      const a = currentAngleFor(item);
+      const rad = a * Math.PI / 180;
+      const x = Math.cos(rad) * radius;
+      const y = Math.sin(rad) * radius;
+      item.style.transform = `translate(${x}px, ${y}px)`;
+      item.classList.toggle('compass-active', item.dataset.page === activePage);
+    });
+    if (ring) ring.style.transform = `rotate(${rotation}deg)`;
+    updateNeedle();
+  }
+
+  function angleFromCenter(clientX, clientY) {
+    const rect = dial.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    return Math.atan2(clientY - cy, clientX - cx) * 180 / Math.PI;
+  }
+
+  function pointerDown(e) {
+    dragging = true;
+    moved = 0;
+    dial.classList.add('dragging');
+    const p = e.touches ? e.touches[0] : e;
+    dragStartAngle = angleFromCenter(p.clientX, p.clientY);
+    rotationStart = rotation;
+  }
+  function pointerMove(e) {
+    if (!dragging) return;
+    const p = e.touches ? e.touches[0] : e;
+    const a = angleFromCenter(p.clientX, p.clientY);
+    let delta = a - dragStartAngle;
+    moved += Math.abs(delta);
+    rotation = rotationStart + delta;
+    place();
+  }
+  function pointerUp() {
+    dragging = false;
+    dial.classList.remove('dragging');
+  }
+
+  dial.addEventListener('mousedown', pointerDown);
+  dial.addEventListener('dragstart', e => e.preventDefault());
+  window.addEventListener('mousemove', pointerMove);
+  window.addEventListener('mouseup', pointerUp);
+  dial.addEventListener('touchstart', pointerDown, { passive: true });
+  window.addEventListener('touchmove', pointerMove, { passive: true });
+  window.addEventListener('touchend', pointerUp);
+
+  items.forEach((item, i) => {
+    item.addEventListener('mouseenter', () => {
+      if (dragging) return;
+      hoverIndex = i;
+      updateNeedle();
+    });
+    item.addEventListener('mouseleave', () => {
+      hoverIndex = null;
+      updateNeedle();
+    });
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      if (moved > 6) return; // era un trascinamento, non un click
+      hoverIndex = i;
+      updateNeedle();
+      const href = item.getAttribute('href');
+      setTimeout(() => { window.location.href = href; }, 380);
+    });
+  });
+
+  function openCompass() {
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    place();
+  }
+  function closeCompass() {
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+    hoverIndex = null;
+  }
+  if (trigger) trigger.addEventListener('click', openCompass);
+  if (closeBtn) closeBtn.addEventListener('click', closeCompass);
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeCompass(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeCompass(); });
+
+  place();
+})();
+
+
+</script>
+<script>
+// Filter logic
+document.querySelectorAll('.port-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.port-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('.work-item').forEach(item => {
+      if (filter === 'all' || item.dataset.cat === filter) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
