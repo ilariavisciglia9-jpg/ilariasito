@@ -601,7 +601,9 @@ CONTACT_FAQ = [('Quanto tempo richiede realizzare un sito?', 'Dipende dalla comp
   ('Il preventivo è gratuito?', 'Sì, il preventivo iniziale è gratuito e senza impegno. Ti mando una proposta dettagliata entro 48 ore dalla ricezione del brief.')]
 FORM_JS = r'''<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>
-/* EMAILJS — stesse chiavi del sito precedente (le richieste arrivano a info@ilariavisciglia.it) */
+/* FORM PREVENTIVI — le richieste arrivano a contatto@ilariavisciglia.it */
+const FORM_TO = 'contatto@ilariavisciglia.it';
+/* EmailJS: conferma automatica al cliente + riserva se FormSubmit non risponde */
 const EJS_SERVICE   = 'service_q85tkn6';
 const EJS_TEMPLATE  = 'template_iu8dbft';
 const EJS_TEMPLATE2 = 'template_40bt12h';
@@ -632,12 +634,31 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   document.getElementById('form-ok').style.display = 'none';
   document.getElementById('form-err').style.display = 'none';
   try {
-    if (!window.emailjs) throw new Error('EmailJS non caricato');
-    await emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
-      from_name: `${nome} ${cognome}`, from_email: email, tipo_progetto: tipo, budget: budget, messaggio: messaggio, to_email: 'info@ilariavisciglia.it'
-    });
+    /* 1) Richiesta a contatto@ilariavisciglia.it tramite FormSubmit (destinatario fissato qui nel codice) */
+    let inviato = false;
     try {
-      await emailjs.send(EJS_SERVICE, EJS_TEMPLATE2, { from_name: nome, from_email: email, to_email: email, tipo_progetto: tipo, budget: budget });
+      const r = await fetch('https://formsubmit.co/ajax/' + FORM_TO, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          _subject: 'Nuova richiesta di preventivo — ' + nome + ' ' + cognome,
+          _template: 'table', _captcha: 'false', _replyto: email,
+          Nome: nome + ' ' + cognome, Email: email, 'Tipo di progetto': tipo, Budget: budget, Messaggio: messaggio
+        })
+      });
+      const j = await r.json().catch(function(){ return {}; });
+      inviato = r.ok && String(j.success) !== 'false';
+    } catch (e1) { console.warn('FormSubmit non raggiungibile:', e1); }
+    /* 2) Riserva: EmailJS verso lo stesso indirizzo */
+    if (!inviato) {
+      if (!window.emailjs) throw new Error('Invio non riuscito');
+      await emailjs.send(EJS_SERVICE, EJS_TEMPLATE, {
+        from_name: `${nome} ${cognome}`, from_email: email, tipo_progetto: tipo, budget: budget, messaggio: messaggio, to_email: FORM_TO
+      });
+    }
+    /* 3) Conferma automatica al cliente (se fallisce, la richiesta è comunque arrivata) */
+    try {
+      if (window.emailjs) await emailjs.send(EJS_SERVICE, EJS_TEMPLATE2, { from_name: nome, from_email: email, to_email: email, tipo_progetto: tipo, budget: budget });
     } catch (e2) { console.warn('Conferma al cliente non inviata:', e2); }
     document.getElementById('form-ok').style.display = 'block';
     this.reset();
@@ -645,11 +666,11 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     document.getElementById('f-budget').value = 'Non specificato';
     document.getElementById('form-ok').scrollIntoView({ behavior: 'smooth', block: 'center' });
   } catch (err) {
-    console.error('EmailJS error:', err);
+    console.error('Errore invio form:', err);
     document.getElementById('form-err').style.display = 'block';
     const subj = encodeURIComponent('Richiesta dal sito — ' + tipo);
     const body = encodeURIComponent('Nome: ' + nome + ' ' + cognome + '\nEmail: ' + email + '\nTipo progetto: ' + tipo + '\nBudget: ' + budget + '\n\n' + messaggio);
-    window.location.href = 'mailto:info@ilariavisciglia.it?subject=' + subj + '&body=' + body;
+    window.location.href = 'mailto:' + FORM_TO + '?subject=' + subj + '&body=' + body;
   } finally {
     btn.disabled = false; btnText.textContent = 'Invia il messaggio →'; spinner.style.display = 'none';
   }
@@ -681,7 +702,7 @@ pages['contatti.html'] = head(
       <div class="panel corners rv d2">
         <h2 style="font-size:1.8rem;margin-bottom:20px">Raccontami il tuo <span class="grad">progetto</span></h2>
         <div class="fmsg ok" id="form-ok">✦ Messaggio inviato! Ti rispondo entro 24 ore lavorative. Nel frattempo puoi esplorare il <a href="portfolio.html" style="color:var(--cyan)">portfolio</a>.</div>
-        <div class="fmsg err" id="form-err">✕ Ops, qualcosa è andato storto. Puoi scrivermi direttamente a <a href="mailto:info@ilariavisciglia.it" style="color:var(--cyan)">info@ilariavisciglia.it</a></div>
+        <div class="fmsg err" id="form-err">✕ Ops, qualcosa è andato storto. Puoi scrivermi direttamente a <a href="mailto:contatto@ilariavisciglia.it" style="color:var(--cyan)">contatto@ilariavisciglia.it</a></div>
         <form id="contact-form" class="form">
           <div class="frow">
             <div class="field"><label for="f-nome">Nome *</label><input id="f-nome" type="text" required autocomplete="given-name"></div>
