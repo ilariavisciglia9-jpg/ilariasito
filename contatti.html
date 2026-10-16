@@ -999,6 +999,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
       });
       const j = await r.json().catch(function(){ return {}; });
       inviato = r.ok && String(j.success) !== 'false';
+      if (!inviato) console.warn('FormSubmit:', j.message || r.status);
     } catch (e1) { console.warn('FormSubmit non raggiungibile:', e1); }
     /* 2) Riserva: EmailJS verso lo stesso indirizzo */
     if (!inviato) {
@@ -1019,9 +1020,7 @@ document.getElementById('contact-form').addEventListener('submit', async functio
   } catch (err) {
     console.error('Errore invio form:', err);
     document.getElementById('form-err').style.display = 'block';
-    const subj = encodeURIComponent('Richiesta dal sito — ' + tipo);
-    const body = encodeURIComponent('Nome: ' + nome + ' ' + cognome + '\nEmail: ' + email + '\nTipo progetto: ' + tipo + '\nBudget: ' + budget + '\n\n' + messaggio);
-    window.location.href = 'mailto:' + FORM_TO + '?subject=' + subj + '&body=' + body;
+    document.getElementById('form-err').scrollIntoView({ behavior: 'smooth', block: 'center' });
   } finally {
     btn.disabled = false; btnText.textContent = 'Invia il messaggio →'; spinner.style.display = 'none';
   }
