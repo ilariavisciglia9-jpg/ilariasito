@@ -675,7 +675,7 @@ pages['contatti.html'] = head(
           <a class="cmethod" href="mailto:info@ilariavisciglia.it" data-hover-screen="mail"><span class="ico">{ico('mailc')}</span><span><strong>Email</strong><span>info@ilariavisciglia.it</span></span></a>
           <a class="cmethod" href="https://wa.me/393291489983" target="_blank" rel="noopener" data-hover-screen="ai"><span class="ico">{ico('wa')}</span><span><strong>WhatsApp</strong><span>+39 329 148 9983</span></span></a>
           <a class="cmethod" href="https://www.instagram.com/iladesign_web" target="_blank" rel="noopener"><span class="ico">{ico('ig')}</span><span><strong>Instagram</strong><span>@iladesign_web</span></span></a>
-          <a class="cmethod" href="pagamenti.html" data-hover-screen="pay"><span class="ico">{ico('pay')}</span><span><strong>Pagamenti online</strong><span>Carta o in 3 rate</span></span></a>
+          <a class="cmethod" href="pagamenti.html" data-hover-screen="pay"><span class="ico">{ico('pay')}</span><span><strong>Pagamenti online</strong><span>Carta o in 3 rate con Klarna</span></span></a>
         </div>
       </div>
       <div class="panel corners rv d2">
@@ -707,22 +707,20 @@ pages['contatti.html'] = head(
 ''' + footer(FORM_JS)
 
 # ================================================================== PAGAMENTI
-PAY_FAQ = [('Il pagamento online è sicuro?', 'Sì: i pagamenti passano dai circuiti ufficiali dei provider (Stripe, Klarna, Scalapay). I dati della carta non transitano mai da questo sito.'),
-  ('Come funziona il pagamento in 3 rate?', 'Scegli Klarna o Scalapay al momento del pagamento: l\'importo viene diviso in 3 rate mensili, senza interessi per te se paghi alle scadenze. L\'approvazione dipende dal provider.'),
+PAY_FAQ = [('Il pagamento online è sicuro?', 'Sì: il pagamento avviene sulla pagina protetta di Stripe, uno dei sistemi di pagamento più sicuri al mondo. I dati della carta non transitano mai da questo sito.'),
+  ('Come funziona il pagamento in 3 rate con Klarna?', 'Inserisci l\'importo del preventivo, scegli Klarna come metodo di pagamento e segui i passaggi: l\'importo viene diviso in 3 rate, senza interessi se paghi alle scadenze. L\'approvazione dipende da Klarna.'),
+  ('Posso pagare anche tutto subito?', 'Sì: nella stessa pagina di pagamento puoi scegliere carta, Apple Pay o Google Pay e saldare in un\'unica soluzione.'),
   ('Dove trovo l\'importo da pagare?', 'L\'importo è quello indicato nel preventivo o nella fattura che ti ho inviato. Se hai ricevuto un link di pagamento personale, usa direttamente quello.'),
-  ('Riceverò la fattura?', 'Sì, dopo il pagamento ricevi la fattura via email.')]
+  ('Riceverò la fattura?', 'Sì, dopo il pagamento ricevi la ricevuta via email e la fattura.')]
 PAY_JS = r'''<script>
 /* ============================================================
-   PAGAMENTO: incolla qui i tuoi link di pagamento.
-   - stripe:   Payment Link di Stripe (carta, Apple Pay, Google Pay; Klarna si attiva dalla dashboard Stripe)
-   - klarna:   può essere lo stesso Payment Link Stripe con Klarna attivo
-   - scalapay: link "Pay by Link" generato dal Partner Portal Scalapay
-   Finché un link è vuoto, il bottone apre la richiesta via email.
+   PAGAMENTO: link di pagamento Stripe (account Ilaria Visciglia).
+   Sulla pagina Stripe il cliente inserisce l'importo del preventivo
+   e sceglie Klarna (3 rate), carta, Apple Pay o Google Pay.
+   Per cambiare link basta sostituire l'indirizzo qui sotto.
    ============================================================ */
 const PAY_LINKS = {
-  stripe:   '',   // PAGAMENTO — es. 'https://buy.stripe.com/xxxx'
-  klarna:   '',   // PAGAMENTO — es. 'https://buy.stripe.com/xxxx'
-  scalapay: ''    // PAGAMENTO — link dal Partner Portal Scalapay
+  klarna: 'https://buy.stripe.com/9B64gyelg1BmdNIfkg00001'   // PAGAMENTO — Stripe Payment Link
 };
 document.querySelectorAll('[data-pay]').forEach(function(b){
   var k = b.getAttribute('data-pay'), url = PAY_LINKS[k];
@@ -731,25 +729,31 @@ document.querySelectorAll('[data-pay]').forEach(function(b){
 });
 </script>'''
 pages['pagamenti.html'] = head(
-  'Pagamenti Online e a Rate con Klarna e Scalapay | Ilaria Visciglia Web Designer',
-  'Paga online in modo sicuro i servizi di Ilaria Visciglia, web designer a Roma: carta, Apple Pay e Google Pay, oppure in 3 rate con Klarna o Scalapay.',
+  'Pagamenti Online e in 3 Rate con Klarna | Ilaria Visciglia Web Designer Roma',
+  'Paga online in modo sicuro i servizi di Ilaria Visciglia, web designer a Roma: in 3 rate con Klarna oppure con carta, Apple Pay e Google Pay.',
   'pagamenti.html', [crumbs(('Home', ''), ('Pagamenti', 'pagamenti.html')), faq_ld(PAY_FAQ)]
 ) + header('pagamenti.html') + f'''
 <section class="hero" style="min-height:78vh" data-pc="hero" data-screen="pay">
   <div class="wrap"><div class="half m-panel">
     <span class="hud rv">Shop · Pagamenti online</span>
     <h1 class="rv d1" style="font-size:clamp(2.4rem,5.4vw,4.8rem)">Paga online, <span class="grad">anche in 3 rate.</span></h1>
-    <p class="lead rv d2">Puoi saldare il tuo progetto in modo sicuro con carta, Apple Pay o Google Pay, oppure dividerlo in 3 rate con Klarna o Scalapay.</p>
+    <p class="lead rv d2">Salda il tuo progetto in modo sicuro e dividilo in 3 rate con Klarna. Se preferisci, nella stessa pagina puoi pagare tutto subito con carta, Apple Pay o Google Pay.</p>
+    <div class="btns rv d3"><a class="btn pink" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">▶ Paga ora</a></div>
   </div></div>
 </section>
 <section class="sec" style="padding-top:30px" data-pc="corner-l" data-screen="pay">
   <div class="wrap">
-    <div class="grid3">
-      <div class="panel corners pay-card rv"><span class="hud">Pagamento unico</span><span class="logo-pay">Carta · Apple Pay · Google Pay</span><p>Pagamento immediato tramite Stripe, uno dei sistemi più sicuri al mondo.</p><a class="btn" data-pay="stripe" data-name="Carta" href="contatti.html" data-hover-screen="pay">Paga con carta →</a></div>
-      <div class="panel corners pay-card rv d1"><span class="hud pink">3 rate</span><span class="logo-pay">Klarna</span><p>Dividi l'importo in 3 rate mensili. Scegli Klarna al momento del pagamento.</p><a class="btn pink" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">Paga con Klarna →</a></div>
-      <div class="panel corners pay-card rv d2"><span class="hud">3 rate</span><span class="logo-pay">Scalapay</span><p>Paga in 3 rate con Scalapay tramite il link che ti invio insieme al preventivo.</p><a class="btn lime" data-pay="scalapay" data-name="Scalapay" href="contatti.html" data-hover-screen="pay">Paga con Scalapay →</a></div>
+    <div class="grid2">
+      <div class="panel corners pay-card rv"><span class="hud pink">3 rate · senza interessi</span><span class="logo-pay">Klarna</span><p>Dividi l'importo del preventivo in 3 rate. Il pagamento avviene sulla pagina sicura di Stripe: scegli Klarna e segui i passaggi.</p><p>Preferisci saldare subito? Sulla stessa pagina trovi anche carta, Apple Pay e Google Pay.</p><a class="btn pink" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">Paga con Klarna →</a></div>
+      <div class="panel corners rv d1"><span class="hud">Come funziona</span>
+        <div class="tl" style="margin-top:6px">
+          <div class="tl-item" style="grid-template-columns:60px 1fr;padding:18px"><span class="y">01</span><div><h3>Clicca "Paga"</h3><p>Si apre la pagina di pagamento protetta di Stripe.</p></div></div>
+          <div class="tl-item" style="grid-template-columns:60px 1fr;padding:18px"><span class="y">02</span><div><h3>Inserisci l'importo</h3><p>Scrivi la cifra indicata nel preventivo che hai ricevuto.</p></div></div>
+          <div class="tl-item" style="grid-template-columns:60px 1fr;padding:18px"><span class="y">03</span><div><h3>Scegli Klarna o carta</h3><p>Conferma: ricevi subito la ricevuta via email.</p></div></div>
+        </div>
+      </div>
     </div>
-    <p class="note rv">Il pagamento rateale è soggetto all'approvazione del provider. Hai ricevuto un link personale? Usa direttamente quello.</p>
+    <p class="note rv">Il pagamento rateale è soggetto all'approvazione di Klarna. Hai ricevuto un link personale? Usa direttamente quello.</p>
   </div>
 </section>
 <section class="sec" data-pc="right" data-screen="pay">

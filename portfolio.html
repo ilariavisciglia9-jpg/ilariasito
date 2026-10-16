@@ -893,7 +893,7 @@ function initPC(){
       if(m==='pay'){
         rr(40,70,300,180,18,'#1a2350');txt('CARTA',64,110,16,C.dim);txt('•••• 4242',64,170,26,C.txt,'700 ');txt('IV CLIENT',64,220,15,C.dim);
         txt('PAGA IN 3 RATE',370,110,18,C.lime,'700 ');
-        ['Klarna','Scalapay','Carta / Apple Pay'].forEach(function(s,i){rr(370,130+i*52,240,40,10,i===Math.floor(k)%3?'#1d3a6b':'#111a38');txt(s,388,156+i*52,16,C.txt);});
+        ['Klarna · 3 rate','Carta','Apple / Google Pay'].forEach(function(s,i){rr(370,130+i*52,240,40,10,i===Math.floor(k)%3?'#1d3a6b':'#111a38');txt(s,388,156+i*52,16,C.txt);});
         txt('✓ pagamento sicuro',40,300,17,C.lime);
       }else{
         for(var p2=0;p2<6;p2++){var x=24+(p2%3)*204,y3=50+Math.floor(p2/3)*170;rr(x,y3,192,156,12,'#111a38');
@@ -1037,7 +1037,7 @@ if(bub&&panel){
     setTimeout(function(){
       var q=t.toLowerCase(),rep='Grazie per il messaggio! Per una risposta precisa scrivi a Ilaria: info@ilariavisciglia.it oppure su WhatsApp al +39 329 148 9983. Il preventivo è gratuito.';
       if(/prezz|cost|quanto|preventiv/.test(q)) rep='Ogni progetto è su misura, quindi il costo dipende da cosa ti serve. Scrivi a info@ilariavisciglia.it o su WhatsApp (+39 329 148 9983) per un preventivo gratuito.';
-      else if(/rate|klarna|scalapay|pagament|pagare/.test(q)) rep='Puoi pagare online in modo sicuro, anche in 3 rate. Trovi tutto nella pagina Pagamenti oppure chiedi a Ilaria il link di pagamento.';
+      else if(/rate|klarna|scalapay|pagament|pagare/.test(q)) rep='Puoi pagare online in modo sicuro, anche in 3 rate. Puoi pagare in 3 rate con Klarna o con carta dalla pagina Pagamenti online.';
       else if(/crm|gestional|dashboard|piattaform|portale|area riservata/.test(q)) rep='Ilaria progetta CRM, gestionali e dashboard su misura: clienti, preventivi, prenotazioni e dati della tua azienda in un unico posto. Guarda la pagina Servizi o scrivile per parlarne.';
       else if(/ecommerce|e-commerce|negozio|shop/.test(q)) rep='Realizzo e-commerce su misura, veloci e ottimizzati per Google, con pagamenti sicuri. Vai alla pagina E-commerce o richiedi un preventivo.';
       else if(/whatsapp|email|mail|\bai\b|intelligenza|assistente|agente|chatbot/.test(q)) rep='Ilaria crea agenti AI per WhatsApp ed email che rispondono ai tuoi clienti 24 ore su 24, addestrati sulla tua attività.';
