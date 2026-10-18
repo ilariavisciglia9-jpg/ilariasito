@@ -32,8 +32,9 @@ def ico(k, size=None):
 # ------------------------------------------------------------------ SERVIZI
 SERVICES = [
  dict(slug='siti-web', name='Siti Web su misura', short='Siti Web', code='MOD_01 // WEB', screen='code', icon='web',
-  title='Creazione Siti Web a Roma | Web Designer Freelance — Ilaria Visciglia',
-  desc='Web designer freelance a Roma: siti web su misura, landing page e siti aziendali scritti a mano, veloci e ottimizzati per Google. Preventivo gratuito.',
+  title='Realizzazione Siti Web Roma | Siti Web su Misura — Ilaria Visciglia',
+  h2='Realizzazione siti web',
+  desc='Realizzazione siti web a Roma: web designer freelance per siti web su misura, landing page e siti aziendali scritti a mano, veloci e ottimizzati per Google.',
   h1='Il tuo sito web,<br><span class="grad">scritto su misura.</span>',
   intro='Landing page e siti aziendali fino a 5 pagine: ogni progetto è scritto a mano, pensato per il tuo settore e ottimizzato per farti trovare su Google.',
   card='Siti aziendali e landing page scritti a mano, veloci, animati e pronti per Google.',
@@ -48,8 +49,9 @@ SERVICES = [
         ('Fai anche il restyling di un sito esistente?','Sì: posso rifare grafica e struttura di un sito già online, mantenendo dominio e posizionamento e migliorando velocità e SEO.'),
         ('Quanto costa un sito web?','Il prezzo dipende dal numero di pagine e dalle funzionalità richieste. Scrivimi per raccontarmi il tuo progetto e ricevere un preventivo su misura, gratuito e senza impegno.')]),
  dict(slug='dashboard', name='CRM, Dashboard & Piattaforme', short='CRM & Dashboard', code='MOD_02 // CRM', screen='crm', icon='crm',
-  title='CRM e Dashboard su Misura a Roma | Gestionali per Aziende — Ilaria Visciglia',
-  desc='Sviluppo CRM, gestionali e dashboard su misura a Roma per aziende e agenzie: clienti, preventivi, dati in tempo reale, aree riservate e pannelli di amministrazione.',
+  title='CRM su Misura e Gestionale Personalizzato a Roma — Ilaria Visciglia',
+  h2='CRM su misura e gestionali',
+  desc='CRM su misura e gestionale personalizzato a Roma per aziende e agenzie: clienti, preventivi, dashboard con dati in tempo reale, aree riservate e pannelli di amministrazione.',
   h1='CRM e dashboard<br><span class="grad">costruiti sulla tua azienda.</span>',
   intro='Clienti, preventivi, prenotazioni, dati e report in un unico posto: progetto CRM, gestionali e piattaforme su misura per aziende e agenzie, non un software generico da adattare.',
   card='Gestionali, CRM e dashboard con i dati della tua azienda in tempo reale, aree riservate e ruoli.',
@@ -64,8 +66,9 @@ SERVICES = [
         ('Posso gestire i contenuti da sola dopo il lancio?','Sì, la piattaforma viene consegnata con un pannello di amministrazione pensato per essere usato senza competenze tecniche.'),
         ('Quanto costa una piattaforma su misura?','Il prezzo dipende dalla complessità delle funzionalità richieste. Scrivimi per raccontarmi il tuo progetto e ricevere un preventivo su misura, gratuito e senza impegno.')]),
  dict(slug='ecommerce', name='E-commerce', short='E-commerce', code='MOD_03 // SHOP', screen='shop', icon='shop',
-  title='Creazione E-commerce a Roma | Negozi Online su Misura — Ilaria Visciglia',
-  desc='Realizzazione e-commerce su misura a Roma: catalogo prodotti, carrello, pagamenti sicuri anche a rate e ottimizzazione SEO. Il tuo negozio online pronto a vendere.',
+  title='Realizzazione E-commerce Roma | Creare un Negozio Online — Ilaria Visciglia',
+  h2='Realizzazione e-commerce',
+  desc='Realizzazione e-commerce a Roma: creo il tuo negozio online su misura con catalogo prodotti, carrello, pagamenti sicuri anche a rate e ottimizzazione SEO.',
   h1='Il tuo negozio online,<br><span class="grad">pronto a vendere.</span>',
   intro='Un e-commerce completo, su misura per i tuoi prodotti: catalogo, carrello, pagamenti sicuri e tutto quello che serve per iniziare a vendere online.',
   card='Negozi online su misura con catalogo, carrello, pagamenti sicuri e gestione ordini semplice.',
@@ -79,8 +82,9 @@ SERVICES = [
         ('Posso gestire da sola i prodotti dopo il lancio?','Sì, il negozio viene consegnato con un pannello semplice da usare per aggiungere prodotti, modificare prezzi e seguire gli ordini.'),
         ('Quanto costa un e-commerce?','Il prezzo dipende dal numero di prodotti e dalle funzionalità richieste. Scrivimi per raccontarmi il tuo progetto e ricevere un preventivo su misura, gratuito e senza impegno.')]),
  dict(slug='agente-ai-email', name='Agente AI per Email', short='Agente AI Email', code='MOD_04 // MAIL', screen='mail', icon='mail',
-  title='Assistente AI per Email a Roma | Automazione Email Aziendale — Ilaria Visciglia',
-  desc='Un agente AI che legge, risponde e gestisce le email della tua azienda al posto tuo, anche in più lingue. Realizzazione e attivazione a Roma.',
+  title='Automazione Email con AI a Roma | Assistente AI per Email — Ilaria Visciglia',
+  h2='Automazione email con AI',
+  desc='Automazione email con intelligenza artificiale: un assistente AI che legge, risponde e gestisce le email della tua azienda al posto tuo, anche in più lingue. Attivazione a Roma.',
   h1='Un assistente che risponde<br><span class="grad">alle email al posto tuo.</span>',
   intro='Un agente AI addestrato sulla tua attività, che legge, risponde e gestisce la posta in arrivo — anche quando tu non sei disponibile.',
   card='Un agente AI addestrato sulla tua attività che risponde alle email, anche in più lingue.',
@@ -94,8 +98,9 @@ SERVICES = [
         ('Posso rivedere le risposte prima che partano?','Si può impostare in diversi modi, in base alle tue preferenze: ne parliamo insieme in fase di consulenza.'),
         ('Quanto costa attivare l\'assistente email?','Il costo di realizzazione e attivazione è fisso, mentre eventuali costi mensili di gestione (crediti AI, collegamenti) vengono concordati in consulenza. Scrivimi per un preventivo.')]),
  dict(slug='agente-ai-whatsapp', name='Agente AI per WhatsApp', short='Agente AI WhatsApp', code='MOD_05 // CHAT', screen='ai', icon='chat',
-  title='Assistente AI per WhatsApp a Roma | Chatbot WhatsApp Business — Ilaria Visciglia',
-  desc='Un agente AI sul WhatsApp Business della tua attività che risponde ai clienti 24 ore su 24, anche in più lingue. Realizzazione e attivazione a Roma.',
+  title='Chatbot WhatsApp Business con AI a Roma | Bot WhatsApp — Ilaria Visciglia',
+  h2='Chatbot WhatsApp',
+  desc='Chatbot WhatsApp con intelligenza artificiale: un bot sul WhatsApp Business della tua attività che risponde ai clienti 24 ore su 24, anche in più lingue. Attivazione a Roma.',
   h1='Un assistente AI su WhatsApp,<br><span class="grad">sempre attivo.</span>',
   intro='Un agente AI sul numero WhatsApp della tua attività, che risponde ai clienti 24 ore su 24 — anche di notte, nei weekend, in vacanza.',
   card='Risponde ai clienti sul tuo WhatsApp Business 24 ore su 24 e raccoglie le richieste.',
@@ -108,8 +113,9 @@ SERVICES = [
         ('Può gestire anche gli ordini o le prenotazioni?','Può raccogliere le richieste e indirizzarle correttamente; per automazioni più complesse (come un booking completo) se ne parla in consulenza.'),
         ('Quanto costa attivare l\'assistente WhatsApp?','Il costo di realizzazione e attivazione è fisso, mentre eventuali costi mensili di gestione (crediti AI, collegamenti) vengono concordati in consulenza. Scrivimi per un preventivo.')]),
  dict(slug='strategia-digitale', name='Strategia Digitale & SEO', short='Strategia & SEO', code='MOD_06 // SEO', screen='seo', icon='seo',
-  title='Strategia Digitale e SEO a Roma | Consulenza per Aziende — Ilaria Visciglia',
-  desc='SEO tecnica, tracking delle conversioni e ottimizzazione continua: una strategia digitale su misura per far crescere la tua azienda a Roma e in tutta Italia.',
+  title='Consulente SEO Roma | Posizionamento su Google per Aziende — Ilaria Visciglia',
+  h2='Consulenza SEO e strategia digitale',
+  desc='Consulente SEO a Roma: audit tecnico, posizionamento su Google, tracking delle conversioni e strategia digitale su misura per far crescere la tua azienda.',
   h1='Un ecosistema digitale,<br><span class="grad">non solo un sito.</span>',
   intro='SEO tecnica, tracking avanzato e ottimizzazione continua: la strategia giusta per farti trovare online e trasformare i visitatori in clienti.',
   card='Audit SEO, tracking delle conversioni e report chiari per farti trovare su Google.',
@@ -122,8 +128,9 @@ SERVICES = [
         ('Serve anche se ho già un sito?','Sì, l\'audit tecnico si può fare su un sito già esistente per individuare cosa sta frenando il posizionamento su Google.'),
         ('Quanto costa la strategia digitale?','Dipende dagli obiettivi e dal livello di intervento richiesto. Scrivimi per raccontarmi la tua situazione e ricevere un preventivo su misura, gratuito e senza impegno.')]),
  dict(slug='campagne-adv', name='Campagne Google & Meta Ads', short='Campagne ADV', code='MOD_07 // ADS', screen='ads', icon='ads',
-  title='Campagne Google Ads e Meta Ads a Roma | Gestione ADV — Ilaria Visciglia',
-  desc='Gestione di campagne Google Ads e Meta Ads a Roma: audience mirate, budget ottimizzato e report chiari per portare clienti reali alla tua azienda.',
+  title='Gestione Google Ads Roma | Campagne Facebook e Meta Ads — Ilaria Visciglia',
+  h2='Gestione campagne Google Ads e Meta Ads',
+  desc='Gestione Google Ads e campagne Facebook e Instagram (Meta Ads) a Roma: audience mirate, budget ottimizzato e report chiari per portare clienti reali alla tua azienda.',
   h1='Campagne ads<br><span class="grad">pensate per convertire.</span>',
   intro='Campagne Google Ads e Meta Ads impostate, seguite e ottimizzate passo dopo passo: audience mirate, budget sotto controllo e risultati misurabili, non solo click.',
   card='Campagne Google e Meta impostate e ottimizzate per portarti clienti reali, non solo click.',
@@ -357,8 +364,8 @@ pages = {}
 # ================================================================== HOME
 home_srv = ''.join(srv_card(s, i) for i, s in enumerate(SERVICES))
 pages['index.html'] = head(
-  'Web Designer Roma | Soluzioni Digitali per Aziende — CRM, Dashboard, Siti e AI',
-  'Ilaria Visciglia, web designer freelance a Roma: soluzioni digitali per aziende e agenzie. Siti web su misura, CRM, dashboard, e-commerce e agenti AI. Preventivo gratuito.',
+  'Web Designer Roma Freelance | Siti Web su Misura, CRM e AI — Ilaria Visciglia',
+  'Ilaria Visciglia, web designer freelance a Roma: realizzazione siti web su misura, CRM e gestionali, e-commerce e chatbot WhatsApp con AI per aziende e agenzie.',
   'index.html', [{"@context": "https://schema.org", "@type": "WebSite", "name": "Ilaria Visciglia — Web Designer a Roma", "url": SITE}]
 ) + header('index.html') + f'''
 <!-- ===== 1. BANNER ANIMATO ===== -->
@@ -424,7 +431,7 @@ pages['index.html'] = head(
 <section class="sec" data-pc="corner-r" data-screen="crm">
   <div class="wrap">
     <span class="hud rv">Lvl 03 · Servizi</span>
-    <h2 class="rv d1" style="max-width:900px">Scegli il tuo <span class="grad">power-up</span> digitale</h2>
+    <h2 class="rv d1" style="max-width:900px">Servizi web a Roma: scegli il tuo <span class="grad">power-up</span></h2>
     <p class="lead rv d2">Dal sito web al CRM su misura, dalla dashboard all'agente AI: tutto quello che serve alla tua azienda per crescere online, costruito da zero.</p>
     <div class="srv-grid">{home_srv}</div>
     <div class="btns rv"><a class="btn ghost" href="servizi.html">Tutti i servizi nel dettaglio →</a></div>
@@ -435,7 +442,7 @@ pages['index.html'] = head(
 <section class="sec" data-pc="corner-l" data-screen="portfolio">
   <div class="wrap">
     <span class="hud pink rv">Lvl 04 · Portfolio</span>
-    <h2 class="rv d1">Livelli <span class="grad">completati</span></h2>
+    <h2 class="rv d1">Portfolio: livelli <span class="grad">completati</span></h2>
     <p class="lead rv d2">Due piattaforme con intelligenza artificiale progettate, sviluppate e gestite da me: dal design al backend, fino ai pagamenti.</p>
     <div class="port-grid">{pitem(PROJECTS[0])}{pitem(PROJECTS[1], i=1)}</div>
     <div class="btns rv"><a class="btn ghost" href="portfolio.html" data-hover-screen="portfolio">Vedi tutti i progetti →</a></div>
@@ -808,7 +815,7 @@ for s in SERVICES:
 <section class="sec" data-pc="left" data-screen="{s['screen']}">
   <div class="wrap"><div class="half r m-panel">
     <span class="hud pink rv">Come funziona</span>
-    <h2 class="rv">{s['name']} <span class="grad">a Roma</span> e in tutta Italia</h2>
+    <h2 class="rv">{s.get('h2', s['name'])} <span class="grad">a Roma</span> e in tutta Italia</h2>
     <p class="rv">{s['how'][0]}</p>
     <p class="rv">{s['how'][1]}</p>
     <p class="for rv mono" style="margin-top:20px;font-size:14px;color:var(--muted)">PER CHI È → <b style="color:var(--lime);font-weight:500">{s['forwho']}</b></p>
