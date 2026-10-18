@@ -197,6 +197,7 @@ LD_BUSINESS = {
  "address": {"@type": "PostalAddress", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT"},
  "areaServed": [{"@type": "City", "name": "Roma"}, {"@type": "Country", "name": "Italia"}],
  "sameAs": ["https://www.instagram.com/iladesign_web"],
+ "vatID": "IT18671571000",
  "founder": {"@type": "Person", "name": "Ilaria Visciglia", "jobTitle": "Web Designer & Developer freelance"},
  "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s['name']}} for s in SERVICES],
 }
@@ -258,7 +259,7 @@ def header(active):
 <canvas id="pc3d" aria-hidden="true"></canvas>
 <header class="hdr">
   <div class="hdr-in">
-    <a class="logo" href="index.html" aria-label="Ilaria Visciglia — Home"><span class="logo-badge">IV</span><span>ilaria.visciglia<small>web designer · Roma</small></span></a>
+    <a class="logo" href="/" aria-label="Ilaria Visciglia — Home"><span class="logo-badge">IV</span><span>ilaria.visciglia<small>web designer · Roma</small></span></a>
     <nav class="nav" aria-label="Menu principale">{links}</nav>
     <a class="btn" href="contatti.html" data-hover-screen="start">▶ Preventivo</a>
     <button class="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -267,7 +268,7 @@ def header(active):
 </header>
 <nav class="mmenu" aria-label="Menu mobile">
   <span class="hud">Pausa · Menu</span>
-  <a href="index.html"{" class=\"on\"" if active == "index.html" else ""}>Home</a>{mlinks}
+  <a href="/"{" class=\"on\"" if active == "index.html" else ""}>Home</a>{mlinks}
   <a class="btn" href="contatti.html">▶ Richiedi un preventivo</a>
 </nav>
 <main>'''
@@ -279,11 +280,11 @@ def footer(extra_js=''):
   <div class="wrap">
     <div class="ftr-grid">
       <div>
-        <a class="logo" href="index.html"><span class="logo-badge">IV</span><span>ilaria.visciglia<small>web designer · Roma</small></span></a>
+        <a class="logo" href="/"><span class="logo-badge">IV</span><span>ilaria.visciglia<small>web designer · Roma</small></span></a>
         <p>Web designer freelance a Roma. Soluzioni digitali per aziende e agenzie: siti web, CRM, dashboard, e-commerce e agenti AI.</p>
         <p class="mono" style="font-size:14px;color:var(--muted)">P.IVA 18671571000</p>
       </div>
-      <div><h4>MENU</h4><ul><li><a href="index.html">Home</a></li>{''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in NAV)}<li><a href="pagamenti.html">Pagamenti online</a></li></ul></div>
+      <div><h4>MENU</h4><ul><li><a href="/">Home</a></li>{''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in NAV)}<li><a href="pagamenti.html">Pagamenti online</a></li></ul></div>
       <div><h4>SERVIZI</h4><ul>{svc}</ul></div>
       <div><h4>CONTATTI</h4><ul>
         <li><a href="mailto:info@ilariavisciglia.it">info@ilariavisciglia.it</a></li>
@@ -366,7 +367,7 @@ pages['index.html'] = head(
   <div class="wrap">
     <div class="half">
       <span class="hud rv">Player 1 · Web designer freelance · Roma</span>
-      <h1 class="rv d1">Soluzioni digitali <span class="grad">per aziende e agenzie</span></h1>
+      <h1 class="rv d1"><span class="h1-kicker">Web designer a Roma</span>Soluzioni digitali <span class="grad">per aziende e agenzie</span></h1>
       <div class="typer rv d2" data-words='["CRM su misura","dashboard aziendali","siti web che convertono","agenti AI 24/7","e-commerce","piattaforme e gestionali"]'>&gt; creo <span class="tw">CRM su misura</span><span class="cur"></span></div>
       <p class="lead rv d2">Sono Ilaria, <strong>web designer a Roma</strong>. Progetto e sviluppo siti web, CRM, dashboard e agenti AI che fanno lavorare meglio la tua azienda: codice scritto a mano, zero template.</p>
       <div class="btns rv d3">
@@ -549,7 +550,7 @@ pages['servizi.html'] = head(
 <section class="hero" data-pc="hero" data-screen="dash">
   <div class="wrap"><div class="half m-panel">
     <span class="hud rv">Seleziona il tuo modulo · Servizi</span>
-    <h1 class="rv d1">Soluzioni digitali <span class="grad">per aziende</span></h1>
+    <h1 class="rv d1">Soluzioni digitali <span class="grad">per aziende a Roma</span></h1>
     <p class="lead rv d2">Sette servizi, un'unica regola: niente template. Siti web, CRM, dashboard, e-commerce e agenti AI progettati intorno a come lavora davvero la tua azienda o la tua agenzia.</p>
     <div class="toc rv d3">{toc}</div>
   </div></div>
