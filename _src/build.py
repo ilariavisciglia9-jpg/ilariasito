@@ -9,7 +9,7 @@ SRC = os.path.join(ROOT, '_src')
 CSS = open(os.path.join(SRC, 'style.css'), encoding='utf-8').read()
 JS = open(os.path.join(SRC, 'app.js'), encoding='utf-8').read()
 SITE = 'https://www.ilariavisciglia.it/'
-TODAY = '2026-10-16'
+TODAY = '2026-10-18'
 
 ICON = {
  'web':  '<path d="M3 5h18v11H3z"/><path d="M8 20h8M12 16v4"/>',
@@ -200,7 +200,7 @@ LD_BUSINESS = {
  "@context": "https://schema.org", "@type": "ProfessionalService",
  "name": "Ilaria Visciglia — Web Designer a Roma", "image": SITE + "images/photo2.jpg", "url": SITE,
  "email": "info@ilariavisciglia.it", "telephone": "+393291489983", "priceRange": "€€",
- "description": "Web designer freelance a Roma: soluzioni digitali per aziende e agenzie — siti web, CRM, dashboard, e-commerce e agenti AI.",
+ "description": "Web designer freelance a Roma: siti web su misura, CRM su misura, e-commerce e chatbot WhatsApp con AI per aziende e agenzie. Preventivo gratuito.",
  "address": {"@type": "PostalAddress", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT"},
  "areaServed": [{"@type": "City", "name": "Roma"}, {"@type": "Country", "name": "Italia"}],
  "sameAs": ["https://www.instagram.com/iladesign_web"],
@@ -288,7 +288,7 @@ def footer(extra_js=''):
     <div class="ftr-grid">
       <div>
         <a class="logo" href="/"><span class="logo-badge">IV</span><span>ilaria.visciglia<small>web designer · Roma</small></span></a>
-        <p>Web designer freelance a Roma. Soluzioni digitali per aziende e agenzie: siti web, CRM, dashboard, e-commerce e agenti AI.</p>
+        <p>Web designer freelance a Roma: siti web su misura, CRM su misura, e-commerce e chatbot WhatsApp per aziende e agenzie.</p>
         <p class="mono" style="font-size:14px;color:var(--muted)">P.IVA 18671571000</p>
       </div>
       <div><h4>MENU</h4><ul><li><a href="/">Home</a></li>{''.join(f'<li><a href="{h}">{t}</a></li>' for h, t in NAV)}<li><a href="pagamenti.html">Pagamenti online</a></li></ul></div>
@@ -365,7 +365,7 @@ pages = {}
 home_srv = ''.join(srv_card(s, i) for i, s in enumerate(SERVICES))
 pages['index.html'] = head(
   'Web Designer Roma Freelance | Siti Web su Misura, CRM e AI — Ilaria Visciglia',
-  'Ilaria Visciglia, web designer freelance a Roma: realizzazione siti web su misura, CRM e gestionali, e-commerce e chatbot WhatsApp con AI per aziende e agenzie.',
+  'Ilaria Visciglia, web designer freelance a Roma: siti web su misura, CRM su misura, e-commerce e chatbot WhatsApp con AI per aziende. Preventivo gratuito.',
   'index.html', [{"@context": "https://schema.org", "@type": "WebSite", "name": "Ilaria Visciglia — Web Designer a Roma", "url": SITE}]
 ) + header('index.html') + f'''
 <!-- ===== 1. BANNER ANIMATO ===== -->
@@ -374,7 +374,7 @@ pages['index.html'] = head(
   <div class="wrap">
     <div class="half">
       <span class="hud rv">Player 1 · Web designer freelance · Roma</span>
-      <h1 class="rv d1"><span class="h1-kicker">Web designer a Roma</span>Soluzioni digitali <span class="grad">per aziende e agenzie</span></h1>
+      <h1 class="rv d1"><span class="h1-kicker">Web designer a Roma</span>Siti web e CRM <span class="grad">su misura per aziende</span></h1>
       <div class="typer rv d2" data-words='["CRM su misura","dashboard aziendali","siti web che convertono","agenti AI 24/7","e-commerce","piattaforme e gestionali"]'>&gt; creo <span class="tw">CRM su misura</span><span class="cur"></span></div>
       <p class="lead rv d2">Sono Ilaria, <strong>web designer a Roma</strong>. Progetto e sviluppo siti web, CRM, dashboard e agenti AI che fanno lavorare meglio la tua azienda: codice scritto a mano, zero template.</p>
       <div class="btns rv d3">
@@ -548,7 +548,7 @@ for i, s in enumerate(SERVICES):
 </section>'''
 toc = ''.join(f'<a href="#{s["slug"]}">{s["short"]}</a>' for s in SERVICES)
 pages['servizi.html'] = head(
-  'Servizi | Soluzioni Digitali per Aziende a Roma — Siti Web, CRM, AI | Ilaria Visciglia',
+  'Servizi Web Designer Roma | Siti Web e CRM su Misura, E-commerce — Ilaria Visciglia',
   'Tutti i servizi di Ilaria Visciglia, web designer a Roma: siti web su misura, CRM e dashboard, e-commerce, agenti AI per email e WhatsApp, SEO e campagne Google e Meta Ads.',
   'servizi.html', [crumbs(('Home', ''), ('Servizi', 'servizi.html')),
    {"@context": "https://schema.org", "@type": "ItemList", "name": "Servizi digitali per aziende",
@@ -557,7 +557,7 @@ pages['servizi.html'] = head(
 <section class="hero" data-pc="hero" data-screen="dash">
   <div class="wrap"><div class="half m-panel">
     <span class="hud rv">Seleziona il tuo modulo · Servizi</span>
-    <h1 class="rv d1">Soluzioni digitali <span class="grad">per aziende a Roma</span></h1>
+    <h1 class="rv d1">Siti web, CRM ed e-commerce <span class="grad">su misura a Roma</span></h1>
     <p class="lead rv d2">Sette servizi, un'unica regola: niente template. Siti web, CRM, dashboard, e-commerce e agenti AI progettati intorno a come lavora davvero la tua azienda o la tua agenzia.</p>
     <div class="toc rv d3">{toc}</div>
   </div></div>
