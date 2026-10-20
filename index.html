@@ -437,6 +437,16 @@ p+p{margin-top:14px}
   .js .rv{opacity:1;transform:none}
 }
 
+/* Pulsanti d'azione: il simbolo ▶ è grafico, il testo resta pulito ("Contattami", "Richiedi un preventivo gratuito") */
+.btn.go::before{content:"▶";font-size:.85em;line-height:1}
+/* Recensioni clienti */
+.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:34px}
+.tst{margin:0;padding:28px 26px;border:1px solid var(--line2);border-radius:14px;background:rgba(255,255,255,.03);position:relative}
+.tst-q{font-family:var(--f-head);font-size:54px;line-height:.6;color:var(--cyan);display:block;margin-bottom:10px}
+.tst blockquote{margin:0 0 18px;color:#fff;font-size:17px;line-height:1.65}
+.tst figcaption b{display:block;color:#fff}
+.tst figcaption small{color:var(--muted);font-size:14px}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "Ilaria Visciglia — Web Designer a Roma", "image": "https://www.ilariavisciglia.it/images/photo2.jpg", "url": "https://www.ilariavisciglia.it/", "email": "info@ilariavisciglia.it", "telephone": "+393291489983", "priceRange": "€€", "description": "Web designer freelance a Roma: siti web su misura, CRM su misura, e-commerce e chatbot WhatsApp con AI per aziende e agenzie. Preventivo gratuito.", "address": {"@type": "PostalAddress", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT"}, "areaServed": [{"@type": "City", "name": "Roma"}, {"@type": "Country", "name": "Italia"}], "sameAs": ["https://www.instagram.com/iladesign_web"], "vatID": "IT18671571000", "founder": {"@type": "Person", "name": "Ilaria Visciglia", "jobTitle": "Web Designer & Developer freelance"}, "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Siti Web su misura"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "CRM, Dashboard & Piattaforme"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "E-commerce"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Agente AI per Email"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Agente AI per WhatsApp"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Strategia Digitale & SEO"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Campagne Google & Meta Ads"}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "Ilaria Visciglia — Web Designer a Roma", "url": "https://www.ilariavisciglia.it/"}</script>
@@ -447,7 +457,7 @@ p+p{margin-top:14px}
   <div class="hdr-in">
     <a class="logo" href="/" aria-label="Ilaria Visciglia — Home"><span class="logo-badge">IV</span><span>ilaria.visciglia<small>web designer · Roma</small></span></a>
     <nav class="nav" aria-label="Menu principale"><a href="chi-sono.html">Chi sono</a><a href="servizi.html">Servizi</a><a href="portfolio.html">Portfolio</a><a href="contatti.html">Contatti</a></nav>
-    <a class="btn" href="contatti.html" data-hover-screen="start">▶ Preventivo</a>
+    <a class="btn go" href="contatti.html" data-hover-screen="start">Contattami</a>
     <button class="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <div class="xp"><i></i><b>XP 0%</b></div>
@@ -455,7 +465,7 @@ p+p{margin-top:14px}
 <nav class="mmenu" aria-label="Menu mobile">
   <span class="hud">Pausa · Menu</span>
   <a href="/" class="on">Home</a><a href="chi-sono.html">Chi sono</a><a href="servizi.html">Servizi</a><a href="portfolio.html">Portfolio</a><a href="contatti.html">Contatti</a>
-  <a class="btn" href="contatti.html">▶ Richiedi un preventivo</a>
+  <a class="btn go" href="contatti.html">Richiedi un preventivo gratuito</a>
 </nav>
 <main>
 <!-- ===== 1. BANNER ANIMATO ===== -->
@@ -468,7 +478,7 @@ p+p{margin-top:14px}
       <div class="typer rv d2" data-words='["CRM su misura","dashboard aziendali","siti web che convertono","agenti AI 24/7","e-commerce","piattaforme e gestionali"]'>&gt; creo <span class="tw">CRM su misura</span><span class="cur"></span></div>
       <p class="lead rv d2">Sono Ilaria, <strong>web designer a Roma</strong>. Progetto e sviluppo siti web, CRM, dashboard e agenti AI che fanno lavorare meglio la tua azienda: codice scritto a mano, zero template.</p>
       <div class="btns rv d3">
-        <a class="btn" href="contatti.html" data-hover-screen="start">▶ Inizia un progetto</a>
+        <a class="btn go" href="contatti.html" data-hover-screen="start">Richiedi un preventivo gratuito</a>
         <a class="btn ghost" href="portfolio.html" data-hover-screen="portfolio">Guarda il portfolio</a>
       </div>
       <div class="stats rv d3">
@@ -606,12 +616,13 @@ p+p{margin-top:14px}
 </section>
 
 <!-- ===== 6. FRASE FINALE ===== -->
+
 <section class="sec cta-big" data-pc="center" data-screen="start">
   <div class="wrap rv">
     <span class="hud pink">Player 2 · pronto?</span>
     <h2 class="glitch">Il tuo business merita<br>un <span class="grad">upgrade</span>.</h2>
     <p class="lead">Smetti di inseguire la concorrenza: costruiamo insieme gli strumenti digitali che la lasciano indietro. Preventivo gratuito, risposta entro 24 ore.</p>
-    <div class="btns"><a class="btn" href="contatti.html" data-hover-screen="start">▶ Iniziamo il progetto</a><a class="btn ghost" href="https://wa.me/393291489983" target="_blank" rel="noopener">Scrivimi su WhatsApp</a></div>
+    <div class="btns"><a class="btn go" href="contatti.html" data-hover-screen="start">Richiedi un preventivo gratuito</a><a class="btn ghost" href="https://wa.me/393291489983" target="_blank" rel="noopener">Scrivimi su WhatsApp</a></div>
     <span class="press">PRESS START</span>
   </div>
 </section>

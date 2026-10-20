@@ -437,6 +437,16 @@ p+p{margin-top:14px}
   .js .rv{opacity:1;transform:none}
 }
 
+/* Pulsanti d'azione: il simbolo ▶ è grafico, il testo resta pulito ("Contattami", "Richiedi un preventivo gratuito") */
+.btn.go::before{content:"▶";font-size:.85em;line-height:1}
+/* Recensioni clienti */
+.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:34px}
+.tst{margin:0;padding:28px 26px;border:1px solid var(--line2);border-radius:14px;background:rgba(255,255,255,.03);position:relative}
+.tst-q{font-family:var(--f-head);font-size:54px;line-height:.6;color:var(--cyan);display:block;margin-bottom:10px}
+.tst blockquote{margin:0 0 18px;color:#fff;font-size:17px;line-height:1.65}
+.tst figcaption b{display:block;color:#fff}
+.tst figcaption small{color:var(--muted);font-size:14px}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ilariavisciglia.it/"}, {"@type": "ListItem", "position": 2, "name": "Pagamenti", "item": "https://www.ilariavisciglia.it/pagamenti.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Il pagamento online è sicuro?", "acceptedAnswer": {"@type": "Answer", "text": "Sì: il pagamento avviene sulla pagina protetta di Stripe, uno dei sistemi di pagamento più sicuri al mondo. I dati della carta non transitano mai da questo sito."}}, {"@type": "Question", "name": "Come funziona il pagamento in 3 rate con Klarna?", "acceptedAnswer": {"@type": "Answer", "text": "Inserisci l'importo del preventivo, scegli Klarna come metodo di pagamento e segui i passaggi: l'importo viene diviso in 3 rate, senza interessi se paghi alle scadenze. L'approvazione dipende da Klarna."}}, {"@type": "Question", "name": "Posso pagare anche tutto subito?", "acceptedAnswer": {"@type": "Answer", "text": "Sì: nella stessa pagina di pagamento puoi scegliere carta, Apple Pay o Google Pay e saldare in un'unica soluzione."}}, {"@type": "Question", "name": "Dove trovo l'importo da pagare?", "acceptedAnswer": {"@type": "Answer", "text": "L'importo è quello indicato nel preventivo o nella fattura che ti ho inviato. Se hai ricevuto un link di pagamento personale, usa direttamente quello."}}, {"@type": "Question", "name": "Riceverò la fattura?", "acceptedAnswer": {"@type": "Answer", "text": "Sì, dopo il pagamento ricevi la ricevuta via email e la fattura."}}]}</script>
@@ -447,7 +457,7 @@ p+p{margin-top:14px}
   <div class="hdr-in">
     <a class="logo" href="/" aria-label="Ilaria Visciglia — Home"><span class="logo-badge">IV</span><span>ilaria.visciglia<small>web designer · Roma</small></span></a>
     <nav class="nav" aria-label="Menu principale"><a href="chi-sono.html">Chi sono</a><a href="servizi.html">Servizi</a><a href="portfolio.html">Portfolio</a><a href="contatti.html">Contatti</a></nav>
-    <a class="btn" href="contatti.html" data-hover-screen="start">▶ Preventivo</a>
+    <a class="btn go" href="contatti.html" data-hover-screen="start">Contattami</a>
     <button class="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <div class="xp"><i></i><b>XP 0%</b></div>
@@ -455,7 +465,7 @@ p+p{margin-top:14px}
 <nav class="mmenu" aria-label="Menu mobile">
   <span class="hud">Pausa · Menu</span>
   <a href="/">Home</a><a href="chi-sono.html">Chi sono</a><a href="servizi.html">Servizi</a><a href="portfolio.html">Portfolio</a><a href="contatti.html">Contatti</a>
-  <a class="btn" href="contatti.html">▶ Richiedi un preventivo</a>
+  <a class="btn go" href="contatti.html">Richiedi un preventivo gratuito</a>
 </nav>
 <main>
 <section class="hero" style="min-height:78vh" data-pc="hero" data-screen="pay">
@@ -463,13 +473,13 @@ p+p{margin-top:14px}
     <span class="hud rv">Shop · Pagamenti online</span>
     <h1 class="rv d1" style="font-size:clamp(2.4rem,5.4vw,4.8rem)">Paga online, <span class="grad">anche in 3 rate.</span></h1>
     <p class="lead rv d2">Salda il tuo progetto in modo sicuro e dividilo in 3 rate con Klarna. Se preferisci, nella stessa pagina puoi pagare tutto subito con carta, Apple Pay o Google Pay.</p>
-    <div class="btns rv d3"><a class="btn pink" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">▶ Paga ora</a></div>
+    <div class="btns rv d3"><a class="btn pink go" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">Paga ora</a></div>
   </div></div>
 </section>
 <section class="sec" style="padding-top:30px" data-pc="corner-l" data-screen="pay">
   <div class="wrap">
     <div class="grid2">
-      <div class="panel corners pay-card rv"><span class="hud pink">3 rate · senza interessi</span><span class="logo-pay">Klarna</span><p>Dividi l'importo del preventivo in 3 rate. Il pagamento avviene sulla pagina sicura di Stripe: scegli Klarna e segui i passaggi.</p><p>Preferisci saldare subito? Sulla stessa pagina trovi anche carta, Apple Pay e Google Pay.</p><a class="btn pink" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">Paga con Klarna →</a></div>
+      <div class="panel corners pay-card rv"><span class="hud pink">3 rate · senza interessi</span><span class="logo-pay">Klarna</span><p>Dividi l'importo del preventivo in 3 rate. Il pagamento avviene sulla pagina sicura di Stripe: scegli Klarna e segui i passaggi.</p><p>Preferisci saldare subito? Sulla stessa pagina trovi anche carta, Apple Pay e Google Pay.</p><a class="btn pink go" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">Paga con Klarna →</a></div>
       <div class="panel corners rv d1"><span class="hud">Come funziona</span>
         <div class="tl" style="margin-top:6px">
           <div class="tl-item" style="grid-template-columns:60px 1fr;padding:18px"><span class="y">01</span><div><h3>Clicca "Paga"</h3><p>Si apre la pagina di pagamento protetta di Stripe.</p></div></div>

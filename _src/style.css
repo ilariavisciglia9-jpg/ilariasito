@@ -396,3 +396,13 @@ p+p{margin-top:14px}
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js .rv{opacity:1;transform:none}
 }
+
+/* Pulsanti d'azione: il simbolo ▶ è grafico, il testo resta pulito ("Contattami", "Richiedi un preventivo gratuito") */
+.btn.go::before{content:"▶";font-size:.85em;line-height:1}
+/* Recensioni clienti */
+.tst-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:34px}
+.tst{margin:0;padding:28px 26px;border:1px solid var(--line2);border-radius:14px;background:rgba(255,255,255,.03);position:relative}
+.tst-q{font-family:var(--f-head);font-size:54px;line-height:.6;color:var(--cyan);display:block;margin-bottom:10px}
+.tst blockquote{margin:0 0 18px;color:#fff;font-size:17px;line-height:1.65}
+.tst figcaption b{display:block;color:#fff}
+.tst figcaption small{color:var(--muted);font-size:14px}
