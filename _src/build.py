@@ -268,7 +268,7 @@ def header(active):
   <div class="hdr-in">
     <a class="logo" href="/" aria-label="Ilaria Visciglia — Home"><span class="logo-badge">IV</span><span>ilaria.visciglia<small>web designer · Roma</small></span></a>
     <nav class="nav" aria-label="Menu principale">{links}</nav>
-    <a class="btn" href="contatti.html" data-hover-screen="start">▶ Preventivo</a>
+    <a class="btn go" href="contatti.html" data-hover-screen="start">Contattami</a>
     <button class="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
   <div class="xp"><i></i><b>XP 0%</b></div>
@@ -276,7 +276,7 @@ def header(active):
 <nav class="mmenu" aria-label="Menu mobile">
   <span class="hud">Pausa · Menu</span>
   <a href="/"{" class=\"on\"" if active == "index.html" else ""}>Home</a>{mlinks}
-  <a class="btn" href="contatti.html">▶ Richiedi un preventivo</a>
+  <a class="btn go" href="contatti.html">Richiedi un preventivo gratuito</a>
 </nav>
 <main>'''
 
@@ -347,8 +347,24 @@ def cta(title='Pronta a passare<br>al <span class="grad">prossimo livello</span>
     <span class="hud pink">Player 2 · pronto?</span>
     <h2 class="glitch">{title}</h2>
     <p class="lead">{text}</p>
-    <div class="btns"><a class="btn" href="contatti.html" data-hover-screen="start">▶ Iniziamo il progetto</a><a class="btn ghost" href="https://wa.me/393291489983" target="_blank" rel="noopener">Scrivimi su WhatsApp</a></div>
+    <div class="btns"><a class="btn go" href="contatti.html" data-hover-screen="start">Richiedi un preventivo gratuito</a><a class="btn ghost" href="https://wa.me/393291489983" target="_blank" rel="noopener">Scrivimi su WhatsApp</a></div>
     <span class="press">PRESS START</span>
+  </div>
+</section>'''
+
+# ══ RECENSIONI CLIENTI ══
+# Inserisci qui SOLO recensioni vere, con il permesso del cliente. Finché la lista è vuota la sezione non compare.
+# Formato: ('Testo della recensione', 'Nome Cognome', 'Ruolo / Azienda', 'progetto realizzato')
+TESTIMONIALS = []
+def testimonials_html():
+    if not TESTIMONIALS: return ''
+    cards = ''.join(f'''<figure class="tst rv d{i % 3 + 1}"><span class="tst-q" aria-hidden="true">“</span><blockquote>{t}</blockquote><figcaption><b>{n}</b><small>{r}{" · " + p if p else ""}</small></figcaption></figure>''' for i, (t, n, r, p) in enumerate(TESTIMONIALS))
+    return f'''<section class="sec" data-pc="left" data-screen="portfolio" id="recensioni">
+  <div class="wrap">
+    <span class="hud rv">Co-op · feedback dei player</span>
+    <h2 class="rv">Cosa dicono <span class="grad">i miei clienti</span></h2>
+    <div class="tst-grid">{cards}</div>
+    <div class="btns rv"><a class="btn go" href="contatti.html" data-hover-screen="start">Richiedi un preventivo gratuito</a></div>
   </div>
 </section>'''
 
@@ -378,7 +394,7 @@ pages['index.html'] = head(
       <div class="typer rv d2" data-words='["CRM su misura","dashboard aziendali","siti web che convertono","agenti AI 24/7","e-commerce","piattaforme e gestionali"]'>&gt; creo <span class="tw">CRM su misura</span><span class="cur"></span></div>
       <p class="lead rv d2">Sono Ilaria, <strong>web designer a Roma</strong>. Progetto e sviluppo siti web, CRM, dashboard e agenti AI che fanno lavorare meglio la tua azienda: codice scritto a mano, zero template.</p>
       <div class="btns rv d3">
-        <a class="btn" href="contatti.html" data-hover-screen="start">▶ Inizia un progetto</a>
+        <a class="btn go" href="contatti.html" data-hover-screen="start">Richiedi un preventivo gratuito</a>
         <a class="btn ghost" href="portfolio.html" data-hover-screen="portfolio">Guarda il portfolio</a>
       </div>
       <div class="stats rv d3">
@@ -450,6 +466,7 @@ pages['index.html'] = head(
 </section>
 
 <!-- ===== 6. FRASE FINALE ===== -->
+{testimonials_html()}
 {cta('Il tuo business merita<br>un <span class="grad">upgrade</span>.', 'Smetti di inseguire la concorrenza: costruiamo insieme gli strumenti digitali che la lasciano indietro. Preventivo gratuito, risposta entro 24 ore.')}
 ''' + footer()
 
@@ -766,13 +783,13 @@ pages['pagamenti.html'] = head(
     <span class="hud rv">Shop · Pagamenti online</span>
     <h1 class="rv d1" style="font-size:clamp(2.4rem,5.4vw,4.8rem)">Paga online, <span class="grad">anche in 3 rate.</span></h1>
     <p class="lead rv d2">Salda il tuo progetto in modo sicuro e dividilo in 3 rate con Klarna. Se preferisci, nella stessa pagina puoi pagare tutto subito con carta, Apple Pay o Google Pay.</p>
-    <div class="btns rv d3"><a class="btn pink" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">▶ Paga ora</a></div>
+    <div class="btns rv d3"><a class="btn pink go" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">Paga ora</a></div>
   </div></div>
 </section>
 <section class="sec" style="padding-top:30px" data-pc="corner-l" data-screen="pay">
   <div class="wrap">
     <div class="grid2">
-      <div class="panel corners pay-card rv"><span class="hud pink">3 rate · senza interessi</span><span class="logo-pay">Klarna</span><p>Dividi l'importo del preventivo in 3 rate. Il pagamento avviene sulla pagina sicura di Stripe: scegli Klarna e segui i passaggi.</p><p>Preferisci saldare subito? Sulla stessa pagina trovi anche carta, Apple Pay e Google Pay.</p><a class="btn pink" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">Paga con Klarna →</a></div>
+      <div class="panel corners pay-card rv"><span class="hud pink">3 rate · senza interessi</span><span class="logo-pay">Klarna</span><p>Dividi l'importo del preventivo in 3 rate. Il pagamento avviene sulla pagina sicura di Stripe: scegli Klarna e segui i passaggi.</p><p>Preferisci saldare subito? Sulla stessa pagina trovi anche carta, Apple Pay e Google Pay.</p><a class="btn pink go" data-pay="klarna" data-name="Klarna" href="contatti.html" data-hover-screen="pay">Paga con Klarna →</a></div>
       <div class="panel corners rv d1"><span class="hud">Come funziona</span>
         <div class="tl" style="margin-top:6px">
           <div class="tl-item" style="grid-template-columns:60px 1fr;padding:18px"><span class="y">01</span><div><h3>Clicca "Paga"</h3><p>Si apre la pagina di pagamento protetta di Stripe.</p></div></div>
@@ -809,7 +826,7 @@ for s in SERVICES:
     <span class="hud rv"><a href="servizi.html">Servizi</a> · {s['code']}</span>
     <h1 class="rv d1" style="font-size:clamp(2.2rem,4.6vw,4rem)">{s['h1']}</h1>
     <p class="lead rv d2">{s['intro']}</p>
-    <div class="btns rv d3"><a class="btn" href="contatti.html" data-hover-screen="start">▶ Richiedi un preventivo</a><a class="btn ghost" href="portfolio.html" data-hover-screen="portfolio">Guarda il portfolio</a></div>
+    <div class="btns rv d3"><a class="btn go" href="contatti.html" data-hover-screen="start">Richiedi un preventivo gratuito</a><a class="btn ghost" href="portfolio.html" data-hover-screen="portfolio">Guarda il portfolio</a></div>
   </div></div>
 </section>
 <section class="sec" data-pc="left" data-screen="{s['screen']}">
