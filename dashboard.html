@@ -8,9 +8,9 @@ var _iub = _iub || [];
 _iub.csConfiguration = {"siteId":4001214,"cookiePolicyId":51717720,"storage":{"useSiteId":true}};
 _iub.csLangConfiguration = {"it":{"cookiePolicyId":51717720}};
 </script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4001214.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+<!-- VELOCITÀ: banner iubenda asincrono. Il sito non usa Analytics/Pixel, quindi l'autoblocking (che bloccava il caricamento) non serve.
+     Se in futuro aggiungi Google Analytics o Meta Pixel, rimetti qui: <script src="https://cs.iubenda.com/autoblocking/4001214.js"></script> -->
+<script type="text/javascript" src="https://cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CRM su Misura e Gestionale Personalizzato a Roma — Ilaria Visciglia</title>
 <meta name="description" content="CRM su misura e gestionale personalizzato a Roma per aziende e agenzie: clienti, preventivi, dashboard con dati in tempo reale, aree riservate e pannelli di amministrazione.">
@@ -31,13 +31,26 @@ _iub.csLangConfiguration = {"it":{"cookiePolicyId":51717720}};
 <meta name="twitter:title" content="CRM su Misura e Gestionale Personalizzato a Roma — Ilaria Visciglia">
 <meta name="twitter:description" content="CRM su misura e gestionale personalizzato a Roma per aziende e agenzie: clienti, preventivi, dashboard con dati in tempo reale, aree riservate e pannelli di amministrazione.">
 <meta name="twitter:image" content="https://www.ilariavisciglia.it/images/photo2.jpg">
-<link rel="icon" type="image/png" href="images/logo-cropped.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<!-- VELOCITÀ: font ospitati sul sito (niente più Google Fonts che bloccava la pagina) -->
+<link rel="preload" href="fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>(function(d){d.classList.add('js');try{if(!sessionStorage.getItem('iv-boot')&&!matchMedia('(hover: none)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('boot-on');}catch(e){}})(document.documentElement);</script>
 <style>
+/* Font ospitati sul sito */
+@font-face{font-family:'Chakra Petch';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/chakra-petch-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Chakra Petch';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/chakra-petch-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Chakra Petch';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/chakra-petch-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jetbrains-mono-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/jetbrains-mono-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/manrope-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/manrope-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/manrope-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/manrope-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Press Start 2P';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/press-start-2p-latin-400-normal.woff2) format('woff2')}
 /* ================================================================
    ILARIA VISCIGLIA — "PLAYER ONE" DESIGN SYSTEM (2026)
    Tema: computer / videogame / terminale. CSS incorporato in ogni pagina.
@@ -195,10 +208,10 @@ p+p{margin-top:14px}
 .stat span{font-family:var(--f-pixel);font-size:8px;color:var(--cyan);letter-spacing:.06em}
 .hero-floor{position:absolute;left:0;right:0;bottom:0;height:34vh;pointer-events:none;z-index:-1;
   background:linear-gradient(transparent,rgba(56,242,255,.06)),
-  repeating-linear-gradient(90deg,rgba(255,63,209,.22) 0 1px,transparent 1px 80px),
-  repeating-linear-gradient(0deg,rgba(255,63,209,.22) 0 1px,transparent 1px 40px);
-  transform:perspective(500px) rotateX(62deg);transform-origin:bottom;mask-image:linear-gradient(transparent,#000 70%);-webkit-mask-image:linear-gradient(transparent,#000 70%);animation:floor 3s linear infinite}
-@keyframes floor{to{background-position:0 0,0 0,0 40px}}
+  repeating-linear-gradient(90deg,rgba(255,63,209,.22) 0 1px,transparent 1px 80px);
+  transform:perspective(500px) rotateX(62deg);transform-origin:bottom;mask-image:linear-gradient(transparent,#000 70%);-webkit-mask-image:linear-gradient(transparent,#000 70%);overflow:hidden}
+.hero-floor::before{content:"";position:absolute;left:0;right:0;top:-40px;bottom:0;background:repeating-linear-gradient(0deg,rgba(255,63,209,.22) 0 1px,transparent 1px 40px);animation:floor 3s linear infinite;will-change:transform}
+@keyframes floor{to{transform:translateY(40px)}}
 .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-family:var(--f-pixel);font-size:8px;color:var(--muted);text-align:center;letter-spacing:.1em}
 .scroll-hint i{display:block;width:2px;height:34px;margin:10px auto 0;background:linear-gradient(var(--cyan),transparent);animation:drop 1.6s ease-in-out infinite}
 @keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -447,6 +460,13 @@ p+p{margin-top:14px}
 .tst figcaption b{display:block;color:#fff}
 .tst figcaption small{color:var(--muted);font-size:14px}
 
+/* VELOCITÀ: il banner iniziale compare subito (prima aspettava il JavaScript per apparire) */
+.js .hero .rv{opacity:1;transform:none;transition:none}
+#pc3d{opacity:0;transition:opacity .8s}
+#pc3d.ready{opacity:1}
+/* schermata di avvio: solo da computer alla prima visita (su telefono rallentava l'apertura) */
+html:not(.boot-on) .boot{display:none}
+
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ilariavisciglia.it/"}, {"@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://www.ilariavisciglia.it/servizi.html"}, {"@type": "ListItem", "position": 3, "name": "CRM, Dashboard & Piattaforme", "item": "https://www.ilariavisciglia.it/dashboard.html"}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Perché un CRM su misura e non uno già pronto?", "acceptedAnswer": {"@type": "Answer", "text": "I CRM generici costringono ad adattare il tuo lavoro al software. Uno su misura segue i tuoi processi, ha solo le funzioni che ti servono e cresce insieme all'azienda, senza canoni per utente."}}, {"@type": "Question", "name": "Che differenza c'è con un sito normale?", "acceptedAnswer": {"@type": "Answer", "text": "Un sito vetrina mostra informazioni a tutti i visitatori. Una piattaforma permette agli utenti di registrarsi e accedere a un'area personale, con dati e funzionalità dedicate a ciascuno."}}, {"@type": "Question", "name": "Posso gestire i contenuti da sola dopo il lancio?", "acceptedAnswer": {"@type": "Answer", "text": "Sì, la piattaforma viene consegnata con un pannello di amministrazione pensato per essere usato senza competenze tecniche."}}, {"@type": "Question", "name": "Quanto costa una piattaforma su misura?", "acceptedAnswer": {"@type": "Answer", "text": "Il prezzo dipende dalla complessità delle funzionalità richieste. Scrivimi per raccontarmi il tuo progetto e ricevere un preventivo su misura, gratuito e senza impegno."}}]}</script>
@@ -563,7 +583,6 @@ p+p{margin-top:14px}
   <div class="ai-msgs" id="ai-msgs"><div class="amsg bot">Ciao! 👋 Sono l'assistente virtuale di Ilaria. Chiedimi di siti web, CRM e dashboard, e-commerce, agenti AI o pagamenti a rate.</div></div>
   <div class="ai-in"><input id="ai-input" type="text" placeholder="Scrivi un messaggio…" aria-label="Messaggio"><button id="ai-send" aria-label="Invia">→</button></div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 /* ================================================================
    ILARIA VISCIGLIA — JS comune (incorporato in ogni pagina)
@@ -585,21 +604,23 @@ if(boot){
   if(seen||reduce){boot.classList.add('off');}
   else{
     var bi=boot.querySelector('.boot-bar i'),bp=0;
-    var bt=setInterval(function(){bp=Math.min(100,bp+12+Math.random()*18);bi.style.width=bp+'%';if(bp>=100){clearInterval(bt);setTimeout(function(){boot.classList.add('off');},180);}},70);
-    setTimeout(function(){boot.classList.add('off');},1400);
+    var bt=setInterval(function(){bp=Math.min(100,bp+18+Math.random()*22);bi.style.width=bp+'%';if(bp>=100){clearInterval(bt);setTimeout(function(){boot.classList.add('off');},120);}},60);
+    setTimeout(function(){boot.classList.add('off');},900);
   }
 }
 
 /* ---------- HEADER + XP ---------- */
 var hdr=doc.querySelector('.hdr'),xp=doc.querySelector('.xp i'),xpb=doc.querySelector('.xp b');
+var maxScroll=0;function measureMax(){maxScroll=root.scrollHeight-W.innerHeight;}
+W.addEventListener('resize',measureMax);W.addEventListener('load',measureMax);measureMax();
 function onScrollUI(){
-  var y=W.scrollY,max=root.scrollHeight-W.innerHeight;
+  var y=W.scrollY,max=maxScroll;
   if(hdr) hdr.classList.toggle('scrolled',y>30);
   var p=max>0?Math.min(1,y/max):0;
   if(xp) xp.style.width=(p*100)+'%';
   if(xpb) xpb.textContent='XP '+Math.round(p*100)+'%';
 }
-W.addEventListener('scroll',onScrollUI,{passive:true});onScrollUI();
+var uiTick=false;W.addEventListener('scroll',function(){if(uiTick)return;uiTick=true;requestAnimationFrame(function(){uiTick=false;onScrollUI();scrollTilt();});},{passive:true});requestAnimationFrame(onScrollUI);
 
 /* ---------- MENU MOBILE ---------- */
 var burger=doc.querySelector('.burger');
@@ -648,14 +669,15 @@ tilts.forEach(function(el){
 function scrollTilt(){
   if(!coarse||reduce) return;
   var vh=W.innerHeight;
-  tilts.forEach(function(el){
-    var r=el.getBoundingClientRect(); if(r.bottom<0||r.top>vh) return;
+  var rs=tilts.map(function(el){return el.getBoundingClientRect();}); /* prima tutte le letture… */
+  tilts.forEach(function(el,i){ /* …poi tutte le scritture */
+    var r=rs[i]; if(r.bottom<0||r.top>vh) return;
     var c=(r.top+r.height/2-vh/2)/(vh/2);
     el.style.setProperty('--rx',(c*10).toFixed(2)+'deg');
     el.style.setProperty('--ry',(Math.sin((r.top/vh)*Math.PI)*6).toFixed(2)+'deg');
   });
 }
-W.addEventListener('scroll',scrollTilt,{passive:true});scrollTilt();
+requestAnimationFrame(scrollTilt);
 /* luce che segue il mouse sulle card servizi */
 doc.querySelectorAll('.srv').forEach(function(el){
   el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');});
@@ -691,9 +713,9 @@ function initPC(){
   if(!canvas) return;
   if(!W.THREE){canvas.remove();return;}
   var T=W.THREE,renderer;
-  try{renderer=new T.WebGLRenderer({canvas:canvas,antialias:true,alpha:true,powerPreference:'high-performance'});}
+  try{renderer=new T.WebGLRenderer({canvas:canvas,antialias:!coarse,alpha:true,powerPreference:'high-performance'});}
   catch(e){canvas.remove();return;}
-  renderer.setPixelRatio(Math.min(W.devicePixelRatio||1,1.75));
+  renderer.setPixelRatio(Math.min(W.devicePixelRatio||1,coarse?1.25:1.75));
   renderer.setClearColor(0x000000,0);
 
   var scene=new T.Scene();
@@ -920,8 +942,12 @@ function initPC(){
   doc.addEventListener('visibilitychange',function(){running=!doc.hidden;if(running){lastT=0;requestAnimationFrame(loop);}});
   function lerp(a,b,t){return a+(b-a)*t;}
   var lastT=0;
+  var lastDraw=0;
   function loop(t){
     if(!running) return;
+    /* su telefono 30 fotogrammi al secondo: fluido ma consuma metà */
+    if(coarse&&t-lastDraw<31){requestAnimationFrame(loop);return;}
+    lastDraw=t;
     frame++;
     var dt=Math.min(.1,lastT?(t-lastT)/1000:.016);lastT=t;
     var e=reduce?1:1-Math.pow(.94,dt*60),es=reduce?1:1-Math.pow(.955,dt*60),em=1-Math.pow(.92,dt*60);
@@ -954,7 +980,24 @@ function initPC(){
   if(doc.fonts&&doc.fonts.ready) doc.fonts.ready.then(go); else go();
   if(reduce){setInterval(function(){drawScreen(performance.now());renderer.render(scene,cam);},1000);}
 }
-if(doc.readyState==='complete') initPC(); else W.addEventListener('load',initPC);
+/* VELOCITÀ: la libreria 3D (600 KB) si scarica solo quando l'utente interagisce o dopo 6 secondi,
+   così la pagina si apre subito. */
+(function(){
+  var started=false,EV=['pointermove','pointerdown','touchstart','scroll','keydown','wheel'];
+  function start(){
+    if(started) return; started=true;
+    EV.forEach(function(e){W.removeEventListener(e,start);});
+    if(W.THREE){initPC();return;}
+    var sc=doc.createElement('script');sc.src='js/three.min.js';sc.async=true;sc.onload=initPC;
+    sc.onerror=function(){var c=doc.getElementById('pc3d');if(c)c.remove();};
+    doc.head.appendChild(sc);
+  }
+  function arm(){
+    EV.forEach(function(e){W.addEventListener(e,start,{passive:true});});
+    setTimeout(start,6000);
+  }
+  if(doc.readyState==='complete') arm(); else W.addEventListener('load',arm);
+})();
 
 /* ================================================================
    ASSISTENTE AI (risposte automatiche, nessun dato inviato a server)

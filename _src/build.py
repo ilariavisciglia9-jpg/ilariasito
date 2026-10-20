@@ -224,9 +224,9 @@ var _iub = _iub || [];
 _iub.csConfiguration = {{"siteId":4001214,"cookiePolicyId":51717720,"storage":{{"useSiteId":true}}}};
 _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":51717720}}}};
 </script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/4001214.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
+<!-- VELOCITÀ: banner iubenda asincrono. Il sito non usa Analytics/Pixel, quindi l'autoblocking (che bloccava il caricamento) non serve.
+     Se in futuro aggiungi Google Analytics o Meta Pixel, rimetti qui: <script src="https://cs.iubenda.com/autoblocking/4001214.js"></script> -->
+<script type="text/javascript" src="https://cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content="{desc}">
@@ -247,12 +247,12 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":51717720}}}};
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{SITE}{og_img}">
-<link rel="icon" type="image/png" href="images/logo-cropped.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-<link href="{FONTS}" rel="stylesheet">
-<script>document.documentElement.classList.add('js');</script>
+<link rel="icon" type="image/png" sizes="64x64" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<!-- VELOCITÀ: font ospitati sul sito (niente più Google Fonts che bloccava la pagina) -->
+<link rel="preload" href="fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/chakra-petch-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>(function(d){{d.classList.add('js');try{{if(!sessionStorage.getItem('iv-boot')&&!matchMedia('(hover: none)').matches&&!matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('boot-on');}}catch(e){{}}}})(document.documentElement);</script>
 <style>
 {CSS}
 </style>
@@ -311,7 +311,6 @@ def footer(extra_js=''):
   <div class="ai-msgs" id="ai-msgs"><div class="amsg bot">Ciao! 👋 Sono l'assistente virtuale di Ilaria. Chiedimi di siti web, CRM e dashboard, e-commerce, agenti AI o pagamenti a rate.</div></div>
   <div class="ai-in"><input id="ai-input" type="text" placeholder="Scrivi un messaggio…" aria-label="Messaggio"><button id="ai-send" aria-label="Invia">→</button></div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 {JS}
 </script>
@@ -413,7 +412,7 @@ pages['index.html'] = head(
     <div class="half" style="max-width:700px">
       <span class="hud rv">Lvl 01 · Chi sono</span>
       <div class="player m-panel">
-        <div class="pcard-photo rv"><img src="images/photo2.jpg" alt="Ilaria Visciglia, web designer freelance a Roma" width="1023" height="1423" loading="lazy"><span class="scan"></span><span class="tag">PLAYER_1<br>ILARIA V.</span></div>
+        <div class="pcard-photo rv"><img src="images/photo2-sm.jpg" alt="Ilaria Visciglia, web designer freelance a Roma" width="600" height="835" decoding="async" loading="lazy"><span class="scan"></span><span class="tag">PLAYER_1<br>ILARIA V.</span></div>
         <div class="rv d1">
           <h2>Ciao, sono <span class="grad">Ilaria.</span></h2>
           <p>Sono una <strong>freelance web designer</strong> e sviluppatrice di Roma. Vengo dalla grafica pubblicitaria e da un master in web design: da oltre 5 anni unisco estetica e codice per costruire strumenti digitali che lavorano davvero per le aziende.</p>
@@ -497,7 +496,7 @@ pages['chi-sono.html'] = head(
     <div class="half" style="max-width:700px">
       <span class="hud rv">Profilo giocatore · Chi sono</span>
       <div class="player m-panel">
-        <div class="pcard-photo rv"><img src="images/photo1.jpg" alt="Ilaria Visciglia, freelance web designer a Roma" width="1023" height="1427"><span class="scan"></span><span class="tag">PLAYER_1<br>ROMA · IT</span></div>
+        <div class="pcard-photo rv"><img src="images/photo1-sm.jpg" alt="Ilaria Visciglia, freelance web designer a Roma" width="600" height="837" decoding="async"><span class="scan"></span><span class="tag">PLAYER_1<br>ROMA · IT</span></div>
         <div class="rv d1">
           <h1 style="font-size:clamp(2.2rem,4.4vw,3.8rem)">Sono <span class="grad">Ilaria Visciglia</span></h1>
           <p class="lead">Web designer e sviluppatrice freelance a Roma. Da oltre 5 anni creo siti web, CRM, dashboard e agenti AI per aziende, agenzie e professionisti.</p>
