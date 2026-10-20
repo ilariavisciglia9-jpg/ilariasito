@@ -18,21 +18,23 @@ if(boot){
   if(seen||reduce){boot.classList.add('off');}
   else{
     var bi=boot.querySelector('.boot-bar i'),bp=0;
-    var bt=setInterval(function(){bp=Math.min(100,bp+12+Math.random()*18);bi.style.width=bp+'%';if(bp>=100){clearInterval(bt);setTimeout(function(){boot.classList.add('off');},180);}},70);
-    setTimeout(function(){boot.classList.add('off');},1400);
+    var bt=setInterval(function(){bp=Math.min(100,bp+18+Math.random()*22);bi.style.width=bp+'%';if(bp>=100){clearInterval(bt);setTimeout(function(){boot.classList.add('off');},120);}},60);
+    setTimeout(function(){boot.classList.add('off');},900);
   }
 }
 
 /* ---------- HEADER + XP ---------- */
 var hdr=doc.querySelector('.hdr'),xp=doc.querySelector('.xp i'),xpb=doc.querySelector('.xp b');
+var maxScroll=0;function measureMax(){maxScroll=root.scrollHeight-W.innerHeight;}
+W.addEventListener('resize',measureMax);W.addEventListener('load',measureMax);measureMax();
 function onScrollUI(){
-  var y=W.scrollY,max=root.scrollHeight-W.innerHeight;
+  var y=W.scrollY,max=maxScroll;
   if(hdr) hdr.classList.toggle('scrolled',y>30);
   var p=max>0?Math.min(1,y/max):0;
   if(xp) xp.style.width=(p*100)+'%';
   if(xpb) xpb.textContent='XP '+Math.round(p*100)+'%';
 }
-W.addEventListener('scroll',onScrollUI,{passive:true});onScrollUI();
+var uiTick=false;W.addEventListener('scroll',function(){if(uiTick)return;uiTick=true;requestAnimationFrame(function(){uiTick=false;onScrollUI();scrollTilt();});},{passive:true});requestAnimationFrame(onScrollUI);
 
 /* ---------- MENU MOBILE ---------- */
 var burger=doc.querySelector('.burger');
@@ -81,14 +83,15 @@ tilts.forEach(function(el){
 function scrollTilt(){
   if(!coarse||reduce) return;
   var vh=W.innerHeight;
-  tilts.forEach(function(el){
-    var r=el.getBoundingClientRect(); if(r.bottom<0||r.top>vh) return;
+  var rs=tilts.map(function(el){return el.getBoundingClientRect();}); /* prima tutte le letture… */
+  tilts.forEach(function(el,i){ /* …poi tutte le scritture */
+    var r=rs[i]; if(r.bottom<0||r.top>vh) return;
     var c=(r.top+r.height/2-vh/2)/(vh/2);
     el.style.setProperty('--rx',(c*10).toFixed(2)+'deg');
     el.style.setProperty('--ry',(Math.sin((r.top/vh)*Math.PI)*6).toFixed(2)+'deg');
   });
 }
-W.addEventListener('scroll',scrollTilt,{passive:true});scrollTilt();
+requestAnimationFrame(scrollTilt);
 /* luce che segue il mouse sulle card servizi */
 doc.querySelectorAll('.srv').forEach(function(el){
   el.addEventListener('pointermove',function(e){var r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px');});
@@ -124,9 +127,9 @@ function initPC(){
   if(!canvas) return;
   if(!W.THREE){canvas.remove();return;}
   var T=W.THREE,renderer;
-  try{renderer=new T.WebGLRenderer({canvas:canvas,antialias:true,alpha:true,powerPreference:'high-performance'});}
+  try{renderer=new T.WebGLRenderer({canvas:canvas,antialias:!coarse,alpha:true,powerPreference:'high-performance'});}
   catch(e){canvas.remove();return;}
-  renderer.setPixelRatio(Math.min(W.devicePixelRatio||1,1.75));
+  renderer.setPixelRatio(Math.min(W.devicePixelRatio||1,coarse?1.25:1.75));
   renderer.setClearColor(0x000000,0);
 
   var scene=new T.Scene();
@@ -353,8 +356,12 @@ function initPC(){
   doc.addEventListener('visibilitychange',function(){running=!doc.hidden;if(running){lastT=0;requestAnimationFrame(loop);}});
   function lerp(a,b,t){return a+(b-a)*t;}
   var lastT=0;
+  var lastDraw=0;
   function loop(t){
     if(!running) return;
+    /* su telefono 30 fotogrammi al secondo: fluido ma consuma metà */
+    if(coarse&&t-lastDraw<31){requestAnimationFrame(loop);return;}
+    lastDraw=t;
     frame++;
     var dt=Math.min(.1,lastT?(t-lastT)/1000:.016);lastT=t;
     var e=reduce?1:1-Math.pow(.94,dt*60),es=reduce?1:1-Math.pow(.955,dt*60),em=1-Math.pow(.92,dt*60);
@@ -387,7 +394,24 @@ function initPC(){
   if(doc.fonts&&doc.fonts.ready) doc.fonts.ready.then(go); else go();
   if(reduce){setInterval(function(){drawScreen(performance.now());renderer.render(scene,cam);},1000);}
 }
-if(doc.readyState==='complete') initPC(); else W.addEventListener('load',initPC);
+/* VELOCITÀ: la libreria 3D (600 KB) si scarica solo quando l'utente interagisce o dopo 6 secondi,
+   così la pagina si apre subito. */
+(function(){
+  var started=false,EV=['pointermove','pointerdown','touchstart','scroll','keydown','wheel'];
+  function start(){
+    if(started) return; started=true;
+    EV.forEach(function(e){W.removeEventListener(e,start);});
+    if(W.THREE){initPC();return;}
+    var sc=doc.createElement('script');sc.src='js/three.min.js';sc.async=true;sc.onload=initPC;
+    sc.onerror=function(){var c=doc.getElementById('pc3d');if(c)c.remove();};
+    doc.head.appendChild(sc);
+  }
+  function arm(){
+    EV.forEach(function(e){W.addEventListener(e,start,{passive:true});});
+    setTimeout(start,6000);
+  }
+  if(doc.readyState==='complete') arm(); else W.addEventListener('load',arm);
+})();
 
 /* ================================================================
    ASSISTENTE AI (risposte automatiche, nessun dato inviato a server)

@@ -1,3 +1,16 @@
+/* Font ospitati sul sito */
+@font-face{font-family:'Chakra Petch';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/chakra-petch-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Chakra Petch';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/chakra-petch-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Chakra Petch';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/chakra-petch-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/jetbrains-mono-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/jetbrains-mono-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/jetbrains-mono-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/manrope-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/manrope-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/manrope-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/manrope-latin-700-normal.woff2) format('woff2')}
+@font-face{font-family:'Press Start 2P';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/press-start-2p-latin-400-normal.woff2) format('woff2')}
 /* ================================================================
    ILARIA VISCIGLIA — "PLAYER ONE" DESIGN SYSTEM (2026)
    Tema: computer / videogame / terminale. CSS incorporato in ogni pagina.
@@ -155,10 +168,10 @@ p+p{margin-top:14px}
 .stat span{font-family:var(--f-pixel);font-size:8px;color:var(--cyan);letter-spacing:.06em}
 .hero-floor{position:absolute;left:0;right:0;bottom:0;height:34vh;pointer-events:none;z-index:-1;
   background:linear-gradient(transparent,rgba(56,242,255,.06)),
-  repeating-linear-gradient(90deg,rgba(255,63,209,.22) 0 1px,transparent 1px 80px),
-  repeating-linear-gradient(0deg,rgba(255,63,209,.22) 0 1px,transparent 1px 40px);
-  transform:perspective(500px) rotateX(62deg);transform-origin:bottom;mask-image:linear-gradient(transparent,#000 70%);-webkit-mask-image:linear-gradient(transparent,#000 70%);animation:floor 3s linear infinite}
-@keyframes floor{to{background-position:0 0,0 0,0 40px}}
+  repeating-linear-gradient(90deg,rgba(255,63,209,.22) 0 1px,transparent 1px 80px);
+  transform:perspective(500px) rotateX(62deg);transform-origin:bottom;mask-image:linear-gradient(transparent,#000 70%);-webkit-mask-image:linear-gradient(transparent,#000 70%);overflow:hidden}
+.hero-floor::before{content:"";position:absolute;left:0;right:0;top:-40px;bottom:0;background:repeating-linear-gradient(0deg,rgba(255,63,209,.22) 0 1px,transparent 1px 40px);animation:floor 3s linear infinite;will-change:transform}
+@keyframes floor{to{transform:translateY(40px)}}
 .scroll-hint{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-family:var(--f-pixel);font-size:8px;color:var(--muted);text-align:center;letter-spacing:.1em}
 .scroll-hint i{display:block;width:2px;height:34px;margin:10px auto 0;background:linear-gradient(var(--cyan),transparent);animation:drop 1.6s ease-in-out infinite}
 @keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -406,3 +419,10 @@ p+p{margin-top:14px}
 .tst blockquote{margin:0 0 18px;color:#fff;font-size:17px;line-height:1.65}
 .tst figcaption b{display:block;color:#fff}
 .tst figcaption small{color:var(--muted);font-size:14px}
+
+/* VELOCITÀ: il banner iniziale compare subito (prima aspettava il JavaScript per apparire) */
+.js .hero .rv{opacity:1;transform:none;transition:none}
+#pc3d{opacity:0;transition:opacity .8s}
+#pc3d.ready{opacity:1}
+/* schermata di avvio: solo da computer alla prima visita (su telefono rallentava l'apertura) */
+html:not(.boot-on) .boot{display:none}
