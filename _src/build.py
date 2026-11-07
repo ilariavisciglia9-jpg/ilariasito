@@ -2,7 +2,7 @@
 """Genera tutte le pagine del sito con CSS e JS incorporati.
 Uso:  python3 _src/build.py   (dalla cartella del repo)
 La cartella _src non viene pubblicata da GitHub Pages (inizia con "_")."""
-import json, os, urllib.parse
+import json, os, re, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, '_src')
@@ -863,6 +863,7 @@ for s in SERVICES:
 
 # ------------------------------------------------------------------ scrittura
 for name, html in pages.items():
+    html = re.sub(r'[ \t]*<!--(?!\[if)[\s\S]*?-->[ \t]*\n?', '', html)   # niente commenti nelle pagine pubblicate
     with open(os.path.join(ROOT, name), 'w', encoding='utf-8') as f:
         f.write(html)
 
