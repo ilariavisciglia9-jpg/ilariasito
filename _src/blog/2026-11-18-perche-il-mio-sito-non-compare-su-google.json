@@ -1,0 +1,27 @@
+{
+ "slug": "perche-il-mio-sito-non-compare-su-google",
+ "date": "2026-11-18",
+ "category": "SEO e Google",
+ "service": "strategia-digitale",
+ "minutes": 6,
+ "title": "Perché il mio sito non compare su Google? 8 cause comuni e come risolverle",
+ "seo_title": "Perché il Mio Sito Non Compare su Google? 8 Cause e Soluzioni",
+ "desc": "Il tuo sito non compare su Google? Ecco le 8 cause più comuni, da indicizzazione a velocità e contenuti, e cosa fare concretamente per farti trovare dai clienti.",
+ "excerpt": "Hai un sito ma su Google ti trova solo chi cerca il tuo nome? Succede a moltissime attività. Ecco perché e cosa puoi fare da subito.",
+ "alt": "Copertina articolo: perché il sito non compare su Google",
+ "body": "<p>Hai un sito, magari anche bello, ma se cerchi il tuo servizio su Google non compari da nessuna parte. Ti trova solo chi digita il nome esatto della tua attività. È una delle situazioni più frustranti, ed è molto comune. La buona notizia è che quasi sempre le cause sono individuabili e risolvibili.</p>\n<h2>1. Google non ha ancora indicizzato il sito</h2>\n<p>Se il sito è nuovo, Google potrebbe non averlo ancora scoperto. Puoi verificarlo cercando <code>site:tuosito.it</code>: se non esce nulla, il sito non è indicizzato. La soluzione è collegarlo a Google Search Console e inviare la sitemap.</p>\n<h2>2. Il sito blocca Google senza saperlo</h2>\n<p>Un'impostazione dimenticata (come un “noindex” lasciato dopo lo sviluppo o un file robots.txt sbagliato) può dire a Google di ignorare le tue pagine. È un errore più frequente di quanto si pensi.</p>\n<h2>3. Le pagine non parlano la lingua dei clienti</h2>\n<p>Se la tua home dice “Benvenuti nel nostro mondo” e non “centro estetico a Roma” o “dentista a Torre Angela”, Google non sa per cosa mostrarti. Titoli, testi e descrizioni devono contenere le parole che i clienti usano davvero quando cercano.</p>\n<h2>4. Una sola pagina per tutti i servizi</h2>\n<p>Una pagina che elenca dieci servizi in tre righe difficilmente si posiziona per qualcuno di essi. Pagine dedicate a ogni servizio, con contenuti utili, hanno molte più possibilità di comparire.</p>\n<h2>5. Il sito è lento o non funziona bene da telefono</h2>\n<p>Google valuta prima di tutto la versione mobile. Un sito lento, con immagini pesanti o testi illeggibili da smartphone viene penalizzato, e i visitatori se ne vanno prima ancora di leggere.</p>\n<h2>6. Manca il profilo Google Business</h2>\n<p>Per le ricerche locali (“parrucchiere vicino a me”) i primi risultati sono quelli della mappa. Senza un profilo Google Business completo, con foto, orari e recensioni, sei invisibile proprio dove cercano i clienti della tua zona.</p>\n<h2>7. Contenuti fermi da anni</h2>\n<p>Un sito che non viene mai aggiornato dà a Google pochi motivi per tornare. Un blog con articoli utili, come quello che stai leggendo, porta nuove pagine, nuove parole chiave e segnali di attività.</p>\n<h2>8. Nessuno parla di te</h2>\n<p>Link da altri siti, citazioni in directory locali e menzioni sui social aiutano Google a capire che la tua attività è reale e affidabile. Senza questi segnali è più difficile superare la concorrenza.</p>\n<div class='box'><strong>Da dove iniziare:</strong> collega Search Console, controlla l'indicizzazione e riscrivi titolo e descrizione della home con il tuo servizio e la tua città. Sono interventi piccoli che spesso danno i primi risultati in poche settimane.</div>\n<p>Se vuoi capire con precisione cosa blocca il tuo sito, posso fare un'analisi e indicarti le priorità con una <a href='strategia-digitale.html'>strategia digitale</a> su misura.</p>",
+ "faqs": [
+  [
+   "Quanto tempo serve per comparire su Google?",
+   "Dipende dalla concorrenza e dallo stato del sito: i primi miglioramenti si vedono spesso in qualche settimana, mentre un buon posizionamento stabile richiede in genere alcuni mesi di lavoro costante."
+  ],
+  [
+   "Pagare Google Ads mi fa salire anche nei risultati normali?",
+   "No. Gli annunci a pagamento e i risultati organici sono separati: le campagne ADV portano visite subito, la SEO costruisce visibilità nel tempo. Spesso conviene usarle insieme."
+  ],
+  [
+   "Posso migliorare la SEO senza rifare il sito?",
+   "Spesso sì: testi, titoli, velocità e struttura si possono ottimizzare sul sito esistente. Se però il sito è molto datato o lento, un restyling può essere la scelta più conveniente."
+  ]
+ ]
+}

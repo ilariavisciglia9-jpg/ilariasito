@@ -193,7 +193,7 @@ def pitem(p, big=False, i=0):
 </article>'''
 
 # ------------------------------------------------------------------ PARTI COMUNI
-NAV = [('chi-sono.html', 'Chi sono'), ('servizi.html', 'Servizi'), ('portfolio.html', 'Portfolio'), ('contatti.html', 'Contatti')]
+NAV = [('chi-sono.html', 'Chi sono'), ('servizi.html', 'Servizi'), ('portfolio.html', 'Portfolio'), ('blog.html', 'Blog'), ('contatti.html', 'Contatti')]
 FONTS = 'https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Press+Start+2P&display=swap'
 
 LD_BUSINESS = {
@@ -209,8 +209,9 @@ LD_BUSINESS = {
  "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s['name']}} for s in SERVICES],
 }
 
-def head(title, desc, path, extra_ld=None, og_img='images/photo2.jpg', robots='index, follow'):
+def head(title, desc, path, extra_ld=None, og_img='images/photo2.jpg', robots='index, follow', og_type='website'):
     url = SITE + ('' if path == 'index.html' else path)
+    base = '<base href="/">\n' if '/' in path else ''
     lds = [LD_BUSINESS] if path == 'index.html' else []
     lds += extra_ld or []
     ld = ''.join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>\n' for x in lds)
@@ -218,7 +219,7 @@ def head(title, desc, path, extra_ld=None, og_img='images/photo2.jpg', robots='i
 <html lang="it">
 <head>
 <meta charset="UTF-8">
-<!-- Iubenda Cookie Banner -->
+{base}<!-- Iubenda Cookie Banner -->
 <script type="text/javascript">
 var _iub = _iub || [];
 _iub.csConfiguration = {{"siteId":4001214,"cookiePolicyId":51717720,"storage":{{"useSiteId":true}}}};
@@ -236,7 +237,7 @@ _iub.csLangConfiguration = {{"it":{{"cookiePolicyId":51717720}}}};
 <meta name="geo.region" content="IT-RM">
 <meta name="geo.placename" content="Roma">
 <meta name="theme-color" content="#05060b">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{og_type}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:image" content="{SITE}{og_img}">
@@ -376,6 +377,119 @@ def steps_html():
 
 pages = {}
 
+# ================================================================== BLOG
+# Ogni articolo è un file JSON in _src/blog/ (istruzioni in _src/blog/README.md).
+# Gli articoli con data futura non vengono pubblicati finché non arriva quel giorno.
+import datetime, glob, html as _html
+OGGI = datetime.date.today().isoformat()
+MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre']
+def data_it(d):
+    y, m, g = d.split('-'); return f'{int(g)} {MESI[int(m) - 1]} {y}'
+POSTS = []
+for _f in sorted(glob.glob(os.path.join(SRC, 'blog', '*.json'))):
+    _p = json.load(open(_f, encoding='utf-8'))
+    if _p['date'] <= OGGI:
+        _p['img'] = _p.get('image') or f"images/blog/{_p['slug']}.jpg"
+        _p['_f'] = os.path.basename(_f)
+        POSTS.append(_p)
+POSTS.sort(key=lambda p: (p['date'], p['_f']), reverse=True)
+
+def post_card(p, i=0):
+    return f'''<a class="post rv d{i % 3 + 1}" href="blog/{p['slug']}.html" data-hover-screen="code">
+  <span class="post-img"><img src="{p['img']}" alt="{_html.escape(p['alt'])}" width="1200" height="630" loading="lazy" decoding="async"></span>
+  <span class="post-meta"><b>{p['category']}</b> · <time datetime="{p['date']}">{data_it(p['date'])}</time> · {p.get('minutes', 5)} min</span>
+  <h3>{p['title']}</h3>
+  <p>{p['excerpt']}</p>
+  <span class="more">Leggi l'articolo →</span>
+</a>'''
+
+def blog_home_html():
+    if not POSTS: return ''
+    return f'''<section class="sec" data-pc="corner-r" data-screen="code" id="blog">
+  <div class="wrap">
+    <span class="hud rv">Lvl 05 · Blog</span>
+    <h2 class="rv d1">Dal blog: <span class="grad">le tue domande</span>, le mie risposte</h2>
+    <p class="lead rv d2">Ogni giorno un articolo nuovo sulle domande che mi fanno più spesso clienti e aziende: siti web, Google, AI, e-commerce e strategia digitale.</p>
+    <div class="post-grid">{''.join(post_card(p, i) for i, p in enumerate(POSTS[:3]))}</div>
+    <div class="btns rv"><a class="btn ghost" href="blog.html">Tutti gli articoli →</a></div>
+  </div>
+</section>'''
+
+if POSTS:
+    cats = sorted({p['category'] for p in POSTS})
+    chips = '<button class="chip on" data-cat="">Tutti</button>' + ''.join(f'<button class="chip" data-cat="{c}">{c}</button>' for c in cats)
+    BLOG_JS = """<script>(function(){var b=document.querySelectorAll('.chip'),c=document.querySelectorAll('.post-grid .post');
+[].forEach.call(b,function(x){x.addEventListener('click',function(){[].forEach.call(b,function(y){y.classList.remove('on')});x.classList.add('on');var k=x.getAttribute('data-cat');
+[].forEach.call(c,function(p){p.style.display=(!k||p.getAttribute('data-cat')===k)?'':'none'})})})})();</script>"""
+    cards = ''.join(post_card(p, i).replace('<a class="post', f'<a data-cat="{p["category"]}" class="post', 1) for i, p in enumerate(POSTS))
+    pages['blog.html'] = head(
+      'Blog Web Design, SEO e AI per Aziende | Ilaria Visciglia — Web Designer Roma',
+      'Il blog di Ilaria Visciglia, web designer a Roma: risposte chiare alle domande più frequenti su siti web, Google, intelligenza artificiale, e-commerce e marketing digitale.',
+      'blog.html', [crumbs(('Home', ''), ('Blog', 'blog.html')),
+       {"@context": "https://schema.org", "@type": "Blog", "name": "Blog di Ilaria Visciglia", "url": SITE + "blog.html",
+        "blogPost": [{"@type": "BlogPosting", "headline": p['title'], "url": SITE + "blog/" + p['slug'] + ".html", "datePublished": p['date']} for p in POSTS[:20]]}]
+    ) + header('blog.html') + f'''
+<section class="hero" data-pc="hero" data-screen="code" style="min-height:auto;padding-bottom:40px">
+  <div class="wrap"><div class="half m-panel">
+    <span class="hud rv">Save point · Blog</span>
+    <h1 class="rv d1" style="font-size:clamp(2.2rem,4.6vw,4rem)">Il blog del <span class="grad">digitale semplice</span></h1>
+    <p class="lead rv d2">Risposte chiare alle domande che mi fanno ogni giorno aziende, professionisti e attività locali: quanto serve un sito, come farsi trovare su Google, come usare l'AI per lavorare meno e vendere di più.</p>
+  </div></div>
+</section>
+<section class="sec tight" data-pc="corner-r" data-screen="code" style="padding-top:20px">
+  <div class="wrap">
+    <div class="chips rv">{chips}</div>
+    <div class="post-grid">{cards}</div>
+  </div>
+</section>
+{cta('Hai una domanda<br>che non trovi <span class="grad">qui</span>?', 'Scrivimi: ti rispondo entro 24 ore. E magari diventa il prossimo articolo del blog.')}
+''' + footer(BLOG_JS)
+
+for p in POSTS:
+    svc = SVC.get(p.get('service', ''), SVC['siti-web'])
+    rel = [q for q in POSTS if q['slug'] != p['slug']]
+    rel = ([q for q in rel if q['category'] == p['category']] + [q for q in rel if q['category'] != p['category']])[:3]
+    faqs = [tuple(x) for x in p.get('faqs', [])]
+    ld = [crumbs(('Home', ''), ('Blog', 'blog.html'), (p['title'], 'blog/' + p['slug'] + '.html')),
+          {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p['title'], "description": p['desc'],
+           "image": SITE + p['img'], "datePublished": p['date'], "dateModified": p.get('updated', p['date']), "inLanguage": "it-IT",
+           "mainEntityOfPage": SITE + 'blog/' + p['slug'] + '.html',
+           "author": {"@type": "Person", "name": "Ilaria Visciglia", "url": SITE + "chi-sono.html"},
+           "publisher": {"@type": "Organization", "name": "Ilaria Visciglia — Web Designer a Roma", "logo": {"@type": "ImageObject", "url": SITE + "images/logo.png"}}}]
+    if faqs: ld.append(faq_ld(faqs))
+    faq_sec = f'''<h2>Domande frequenti</h2>{faq_html(faqs)}''' if faqs else ''
+    rel_sec = f'''<section class="sec tight" data-pc="corner-l" data-screen="code">
+  <div class="wrap">
+    <span class="hud rv">Continua a leggere</span>
+    <h2 class="rv">Altri <span class="grad">articoli</span></h2>
+    <div class="post-grid">{''.join(post_card(q, i) for i, q in enumerate(rel))}</div>
+  </div>
+</section>''' if rel else ''
+    pages['blog/' + p['slug'] + '.html'] = head(p.get('seo_title', p['title'] + ' | Blog Ilaria Visciglia'), p['desc'], 'blog/' + p['slug'] + '.html', ld, og_img=p['img'], og_type='article') + header('blog.html') + f'''
+<article>
+<section class="sec art-top" data-pc="corner-r" data-screen="code">
+  <div class="wrap art-wrap">
+    <span class="hud rv"><a href="blog.html">Blog</a> · {p['category']}</span>
+    <h1 class="art-h1 rv d1">{p['title']}</h1>
+    <p class="post-meta rv d1">di <b>Ilaria Visciglia</b> · <time datetime="{p['date']}">{data_it(p['date'])}</time> · lettura {p.get('minutes', 5)} min</p>
+    <figure class="art-img rv d2"><img src="{p['img']}" alt="{_html.escape(p['alt'])}" width="1200" height="630" decoding="async"></figure>
+    <div class="prose panel">
+      {p['body']}
+      {faq_sec}
+      <div class="art-cta">
+        <span class="hud pink">Power-up consigliato</span>
+        <h3>{svc['name']}</h3>
+        <p>{svc['card']}</p>
+        <div class="btns" style="margin-top:18px"><a class="btn go" href="contatti.html" data-hover-screen="start">Richiedi un preventivo gratuito</a><a class="btn ghost" href="{svc['slug']}.html">Scopri il servizio →</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+</article>
+{rel_sec}
+''' + footer()
+
+
 # ================================================================== HOME
 home_srv = ''.join(srv_card(s, i) for i, s in enumerate(SERVICES))
 pages['index.html'] = head(
@@ -464,7 +578,10 @@ pages['index.html'] = head(
   </div>
 </section>
 
-<!-- ===== 6. FRASE FINALE ===== -->
+<!-- ===== 6. BLOG (ultimi 3 articoli) ===== -->
+{blog_home_html()}
+
+<!-- ===== 7. FRASE FINALE ===== -->
 {testimonials_html()}
 {cta('Il tuo business merita<br>un <span class="grad">upgrade</span>.', 'Smetti di inseguire la concorrenza: costruiamo insieme gli strumenti digitali che la lasciano indietro. Preventivo gratuito, risposta entro 24 ore.')}
 ''' + footer()
@@ -861,9 +978,11 @@ for s in SERVICES:
 {cta('Hai un progetto?<br><span class="grad">Parliamone adesso.</span>')}
 ''' + footer()
 
+
 # ------------------------------------------------------------------ scrittura
 for name, html in pages.items():
     html = re.sub(r'[ \t]*<!--(?!\[if)[\s\S]*?-->[ \t]*\n?', '', html)   # niente commenti nelle pagine pubblicate
+    os.makedirs(os.path.dirname(os.path.join(ROOT, name)), exist_ok=True)
     with open(os.path.join(ROOT, name), 'w', encoding='utf-8') as f:
         f.write(html)
 
@@ -873,6 +992,10 @@ prio = {'': '1.0', 'servizi.html': '0.9', 'portfolio.html': '0.8', 'chi-sono.htm
 sm = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
 for u in order:
     sm += f'  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>{prio.get(u, "0.9")}</priority>\n  </url>\n'
+if POSTS:
+    sm += f'  <url>\n    <loc>{SITE}blog.html</loc>\n    <lastmod>{POSTS[0]["date"]}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>0.8</priority>\n  </url>\n'
+for p in POSTS:
+    sm += f'  <url>\n    <loc>{SITE}blog/{p["slug"]}.html</loc>\n    <lastmod>{p.get("updated", p["date"])}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.6</priority>\n  </url>\n'
 sm += '</urlset>\n'
 open(os.path.join(ROOT, 'sitemap.xml'), 'w').write(sm)
 print('OK', len(pages), 'pagine')

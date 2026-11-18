@@ -462,6 +462,49 @@ p+p{margin-top:14px}
 #pc3d.ready{opacity:1}
 /* schermata di avvio: solo da computer alla prima visita (su telefono rallentava l'apertura) */
 html:not(.boot-on) .boot{display:none}
+/* ---------- BLOG ---------- */
+.post-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px;margin-top:44px}
+.post{display:flex;flex-direction:column;gap:12px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;padding:0 0 24px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .25s,border-color .25s,box-shadow .25s}
+.post:hover{transform:translateY(-6px);border-color:var(--line2);box-shadow:0 20px 50px rgba(0,0,0,.4),0 0 0 1px rgba(56,242,255,.2)}
+.post-img{display:block;aspect-ratio:1200/630;overflow:hidden;border-bottom:1px solid var(--line)}
+.post-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.post:hover .post-img img{transform:scale(1.04)}
+.post-meta{font-family:var(--f-mono);font-size:13.5px;color:var(--muted);padding:0 24px}
+.post-meta b{color:var(--lime);font-weight:600}
+.post h3{padding:0 24px;margin:0;font-size:1.35rem;line-height:1.2}
+.post p{padding:0 24px;font-size:16px;color:var(--soft)}
+.post .more{margin-top:auto;padding:4px 24px 0;font-family:var(--f-mono);font-size:14px;color:var(--cyan)}
+.post:hover .more{color:var(--lime)}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{cursor:pointer;background:var(--panel);border:1px solid var(--line2);border-radius:999px;padding:8px 16px;font-family:var(--f-mono);font-size:14px;color:var(--soft);transition:all .2s}
+.chip:hover{color:#fff;border-color:var(--cyan)}
+.chip.on{background:var(--cyan);color:#000;border-color:var(--cyan)}
+.art-top{padding-top:140px}
+.art-wrap{max-width:900px}
+.art-h1{font-size:clamp(2rem,4.4vw,3.4rem);text-transform:none;line-height:1.1;margin-bottom:18px}
+.art-top>.wrap>.post-meta{padding:0;margin-bottom:28px}
+.art-img{margin:0 0 30px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line2)}
+.art-img img{width:100%;height:auto}
+.prose{font-size:18.5px;line-height:1.75;color:#fff}
+.prose>*+*{margin-top:1.05em}
+.prose h2{font-size:clamp(1.5rem,2.6vw,2rem);text-transform:none;margin:1.8em 0 .2em;line-height:1.2}
+.prose h3{font-size:1.3rem;margin:1.4em 0 .1em}
+.prose ul,.prose ol{padding-left:1.3em}
+.prose li+li{margin-top:.45em}
+.prose li::marker{color:var(--cyan)}
+.prose a{color:var(--cyan);text-decoration:underline;text-underline-offset:3px}
+.prose a.btn{text-decoration:none}
+.prose a.btn.go{color:#000}
+.prose a.btn.ghost{color:#fff}
+.prose strong{color:#fff}
+.prose blockquote{border-left:3px solid var(--pink);padding:6px 0 6px 20px;color:var(--soft);font-style:italic}
+.prose .box{background:rgba(56,242,255,.06);border:1px solid var(--line2);border-radius:12px;padding:20px 22px}
+.prose .faq{margin-top:20px}
+.art-cta{margin-top:2.4em;padding:28px;border:1px solid var(--line2);border-radius:var(--r);background:rgba(255,63,209,.05)}
+.art-cta h3{margin:0 0 8px}
+.art-cta p{color:var(--soft)}
+@media (max-width:860px){.art-top{padding-top:110px}.prose{font-size:17.5px}.post-grid{grid-template-columns:minmax(0,1fr)}}
 
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.ilariavisciglia.it/"}, {"@type": "ListItem", "position": 2, "name": "Servizi", "item": "https://www.ilariavisciglia.it/servizi.html"}, {"@type": "ListItem", "position": 3, "name": "Strategia Digitale & SEO", "item": "https://www.ilariavisciglia.it/strategia-digitale.html"}]}</script>
@@ -473,7 +516,7 @@ html:not(.boot-on) .boot{display:none}
 <header class="hdr">
   <div class="hdr-in">
     <a class="logo" href="/" aria-label="Ilaria Visciglia — Home"><span class="logo-badge">IV</span><span>ilaria.visciglia<small>web designer · Roma</small></span></a>
-    <nav class="nav" aria-label="Menu principale"><a href="chi-sono.html">Chi sono</a><a href="servizi.html" class="on">Servizi</a><a href="portfolio.html">Portfolio</a><a href="contatti.html">Contatti</a></nav>
+    <nav class="nav" aria-label="Menu principale"><a href="chi-sono.html">Chi sono</a><a href="servizi.html" class="on">Servizi</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="contatti.html">Contatti</a></nav>
     <a class="btn go" href="contatti.html" data-hover-screen="start">Contattami</a>
     <button class="burger" aria-label="Apri il menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -481,7 +524,7 @@ html:not(.boot-on) .boot{display:none}
 </header>
 <nav class="mmenu" aria-label="Menu mobile">
   <span class="hud">Pausa · Menu</span>
-  <a href="/">Home</a><a href="chi-sono.html">Chi sono</a><a href="servizi.html" class="on">Servizi</a><a href="portfolio.html">Portfolio</a><a href="contatti.html">Contatti</a>
+  <a href="/">Home</a><a href="chi-sono.html">Chi sono</a><a href="servizi.html" class="on">Servizi</a><a href="portfolio.html">Portfolio</a><a href="blog.html">Blog</a><a href="contatti.html">Contatti</a>
   <a class="btn go" href="contatti.html">Richiedi un preventivo gratuito</a>
 </nav>
 <main>
@@ -559,7 +602,7 @@ html:not(.boot-on) .boot{display:none}
         <p>Web designer freelance a Roma: siti web su misura, CRM su misura, e-commerce e chatbot WhatsApp per aziende e agenzie.</p>
         <p class="mono" style="font-size:14px;color:var(--muted)">P.IVA 18671571000</p>
       </div>
-      <div><h4>MENU</h4><ul><li><a href="/">Home</a></li><li><a href="chi-sono.html">Chi sono</a></li><li><a href="servizi.html">Servizi</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contatti.html">Contatti</a></li><li><a href="pagamenti.html">Pagamenti online</a></li></ul></div>
+      <div><h4>MENU</h4><ul><li><a href="/">Home</a></li><li><a href="chi-sono.html">Chi sono</a></li><li><a href="servizi.html">Servizi</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="blog.html">Blog</a></li><li><a href="contatti.html">Contatti</a></li><li><a href="pagamenti.html">Pagamenti online</a></li></ul></div>
       <div><h4>SERVIZI</h4><ul><li><a href="siti-web.html">Siti Web su misura</a></li><li><a href="dashboard.html">CRM, Dashboard & Piattaforme</a></li><li><a href="ecommerce.html">E-commerce</a></li><li><a href="agente-ai-email.html">Agente AI per Email</a></li><li><a href="agente-ai-whatsapp.html">Agente AI per WhatsApp</a></li><li><a href="strategia-digitale.html">Strategia Digitale & SEO</a></li><li><a href="campagne-adv.html">Campagne Google & Meta Ads</a></li></ul></div>
       <div><h4>CONTATTI</h4><ul>
         <li><a href="mailto:info@ilariavisciglia.it">info@ilariavisciglia.it</a></li>
