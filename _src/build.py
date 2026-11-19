@@ -32,13 +32,13 @@ def ico(k, size=None):
 # ------------------------------------------------------------------ SERVIZI
 SERVICES = [
  dict(slug='siti-web', name='Siti Web su misura', short='Siti Web', code='MOD_01 // WEB', screen='code', icon='web',
-  title='Realizzazione Siti Web Roma | Siti Web su Misura — Ilaria Visciglia',
+  title='Creazione e Realizzazione Siti Web Roma | Web Designer — Ilaria Visciglia',
   h2='Realizzazione siti web',
-  desc='Realizzazione siti web a Roma: web designer freelance per siti web su misura, landing page e siti aziendali scritti a mano, veloci e ottimizzati per Google.',
+  desc='Creazione e realizzazione siti web a Roma: web designer freelance per siti internet su misura, siti vetrina, landing page e siti aziendali veloci e ottimizzati per Google.',
   h1='Il tuo sito web,<br><span class="grad">scritto su misura.</span>',
-  intro='Landing page e siti aziendali fino a 5 pagine: ogni progetto è scritto a mano, pensato per il tuo settore e ottimizzato per farti trovare su Google.',
+  intro='Creazione siti web a Roma, dalla landing page al sito vetrina o aziendale fino a 5 pagine: ogni progetto è scritto a mano, pensato per il tuo settore e ottimizzato per farti trovare su Google.',
   card='Siti aziendali e landing page scritti a mano, veloci, animati e pronti per Google.',
-  how=['Non parto da un modello pronto: ogni sito è scritto a mano, pensato sul tuo settore, sui tuoi obiettivi e su come i tuoi clienti ti cercano online.',
+  how=['Non parto da un modello pronto: come web designer e sviluppatrice web freelance a Roma, scrivo ogni sito a mano, pensato sul tuo settore, sui tuoi obiettivi e su come i tuoi clienti ti cercano online.',
        'Che tu abbia bisogno di una landing page per lanciare un prodotto o di un sito aziendale completo, il risultato è un progetto veloce, responsive e pronto a farti trovare su Google con le parole giuste.'],
   feats=[('Design su misura','Nessun template: layout, colori e animazioni nascono dal tuo brand.'),('Google & SEO','Struttura tecnica corretta, meta tag, dati strutturati e parole chiave del tuo settore.'),
          ('Modulo contatti + WhatsApp','Le richieste arrivano direttamente alla tua email o in chat.'),('Privacy & cookie','Banner cookie e policy conformi al GDPR, già configurati.'),
@@ -47,6 +47,7 @@ SERVICES = [
   faqs=[('Quante pagine posso avere?','Si parte da una landing page (una pagina singola ad alta conversione) fino a un sito completo di 5 pagine, con la possibilità di aggiungerne altre in base alle tue esigenze.'),
         ('Il sito sarà ottimizzato per i motori di ricerca?','Sì, ogni sito include l\'ottimizzazione Google & SEO di base: struttura tecnica corretta, velocità di caricamento e contenuti pensati per essere trovati.'),
         ('Fai anche il restyling di un sito esistente?','Sì: posso rifare grafica e struttura di un sito già online, mantenendo dominio e posizionamento e migliorando velocità e SEO.'),
+        ('Meglio un web designer freelance o una web agency a Roma?','Con una web designer freelance parli sempre con la persona che progetta e sviluppa il tuo sito: tempi più rapidi, meno passaggi e un progetto seguito dall\'inizio alla fine, con la stessa cura di una web agency.'),
         ('Quanto costa un sito web?','Il prezzo dipende dal numero di pagine e dalle funzionalità richieste. Scrivimi per raccontarmi il tuo progetto e ricevere un preventivo su misura, gratuito e senza impegno.')]),
  dict(slug='dashboard', name='CRM, Dashboard & Piattaforme', short='CRM & Dashboard', code='MOD_02 // CRM', screen='crm', icon='crm',
   title='CRM su Misura e Gestionale Personalizzato a Roma — Ilaria Visciglia',
@@ -164,6 +165,8 @@ PROJECTS = [
       text='Sito per un\'ottica a Roma con prova virtuale degli occhiali direttamente dal browser, senza app da scaricare.'),
  dict(d='laboratoriwrapping.it', cat='corporate', label='Sito 3D', tags=['Three.js','Animazioni allo scroll'],
       text='Sito energico per un\'azienda di car wrapping, con una sezione 3D allo scroll e un\'auto da personalizzare con i colori del wrapping.'),
+ dict(d='www.suggestionitrebisacce.com', cat='corporate', label='Negozio locale', tags=['SEO locale','Pagine per categoria','WhatsApp'],
+      text='Sito elegante per Suggestioni, negozio di arredamento e idee regalo a Trebisacce: una pagina per ogni categoria di prodotto, ottimizzazione SEO locale e contatto diretto su WhatsApp.'),
  dict(d='vucandles.com', cat='ecommerce', label='E-commerce', tags=['Bilingue IT/EN','Catalogo'],
       text='E-commerce di candele artigianali, bilingue italiano e inglese: catalogo curato, acquisto semplice e un\'atmosfera calda fin dalla prima schermata.'),
  dict(d='gfmentalcoach.it', cat='corporate', label='Personal brand', tags=['Personal Brand','Design raffinato'],
@@ -204,6 +207,7 @@ LD_BUSINESS = {
  "address": {"@type": "PostalAddress", "addressLocality": "Roma", "addressRegion": "RM", "addressCountry": "IT"},
  "areaServed": [{"@type": "City", "name": "Roma"}, {"@type": "Country", "name": "Italia"}],
  "sameAs": ["https://www.instagram.com/iladesign_web"],
+ "knowsAbout": ["Web design", "Creazione siti web", "Sviluppo siti web", "E-commerce", "SEO", "CRM su misura", "Intelligenza artificiale"],
  "vatID": "IT18671571000",
  "founder": {"@type": "Person", "name": "Ilaria Visciglia", "jobTitle": "Web Designer & Developer freelance"},
  "makesOffer": [{"@type": "Offer", "itemOffered": {"@type": "Service", "name": s['name']}} for s in SERVICES],
@@ -494,7 +498,7 @@ for p in POSTS:
 home_srv = ''.join(srv_card(s, i) for i, s in enumerate(SERVICES))
 pages['index.html'] = head(
   'Web Designer Roma Freelance | Siti Web su Misura, CRM e AI — Ilaria Visciglia',
-  'Ilaria Visciglia, web designer freelance a Roma: siti web su misura, CRM su misura, e-commerce e chatbot WhatsApp con AI per aziende. Preventivo gratuito.',
+  'Web designer Roma freelance: creazione siti web su misura, siti internet aziendali, e-commerce, CRM e chatbot WhatsApp con AI per aziende. Preventivo gratuito.',
   'index.html', [{"@context": "https://schema.org", "@type": "WebSite", "name": "Ilaria Visciglia — Web Designer a Roma", "url": SITE}]
 ) + header('index.html') + f'''
 <!-- ===== 1. BANNER ANIMATO ===== -->
@@ -505,7 +509,7 @@ pages['index.html'] = head(
       <span class="hud rv">Player 1 · Web designer freelance · Roma</span>
       <h1 class="rv d1"><span class="h1-kicker">Web designer a Roma</span>Siti web e CRM <span class="grad">su misura per aziende</span></h1>
       <div class="typer rv d2" data-words='["CRM su misura","dashboard aziendali","siti web che convertono","agenti AI 24/7","e-commerce","piattaforme e gestionali"]'>&gt; creo <span class="tw">CRM su misura</span><span class="cur"></span></div>
-      <p class="lead rv d2">Sono Ilaria, <strong>web designer a Roma</strong>. Progetto e sviluppo siti web, CRM, dashboard e agenti AI che fanno lavorare meglio la tua azienda: codice scritto a mano, zero template.</p>
+      <p class="lead rv d2">Sono Ilaria, <strong>web designer a Roma</strong> e sviluppatrice web freelance. Mi occupo di <strong>creazione siti web</strong>, CRM, dashboard e agenti AI che fanno lavorare meglio la tua azienda: codice scritto a mano, zero template.</p>
       <div class="btns rv d3">
         <a class="btn go" href="contatti.html" data-hover-screen="start">Richiedi un preventivo gratuito</a>
         <a class="btn ghost" href="portfolio.html" data-hover-screen="portfolio">Guarda il portfolio</a>
