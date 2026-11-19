@@ -41,7 +41,7 @@ Si possono aggiungere nuove domande in fondo a ogni gruppo.
 - [ ] 5 lavori ripetitivi che puoi togliere al tuo staff con l'automazione
 
 ## E-commerce
-- [ ] Aprire un e-commerce: da dove iniziare
+- [x] 2026-11-19 Aprire un e-commerce: da dove iniziare
 - [ ] Shopify o e-commerce su misura?
 - [ ] Pagamenti online: Stripe, PayPal, Klarna e Scalapay a confronto
 - [ ] Come far tornare i clienti sul tuo shop online
