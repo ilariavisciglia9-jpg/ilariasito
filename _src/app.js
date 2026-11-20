@@ -401,6 +401,8 @@ function initPC(){
   function start(){
     if(started) return; started=true;
     EV.forEach(function(e){W.removeEventListener(e,start);});
+    /* su telefono niente computer 3D (e niente download della libreria) */
+    if(W.matchMedia&&W.matchMedia('(max-width:860px)').matches){var c0=doc.getElementById('pc3d');if(c0)c0.remove();return;}
     if(W.THREE){initPC();return;}
     var sc=doc.createElement('script');sc.src='js/three.min.js';sc.async=true;sc.onload=initPC;
     sc.onerror=function(){var c=doc.getElementById('pc3d');if(c)c.remove();};

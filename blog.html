@@ -460,6 +460,8 @@ p+p{margin-top:14px}
 .js .hero .rv{opacity:1;transform:none;transition:none}
 #pc3d{opacity:0;transition:opacity .8s}
 #pc3d.ready{opacity:1}
+/* su telefono il computer 3D copriva i testi: nascosto */
+@media (max-width:860px){#pc3d{display:none!important}}
 /* schermata di avvio: solo da computer alla prima visita (su telefono rallentava l'apertura) */
 html:not(.boot-on) .boot{display:none}
 /* ---------- BLOG ---------- */
@@ -1012,6 +1014,8 @@ function initPC(){
   function start(){
     if(started) return; started=true;
     EV.forEach(function(e){W.removeEventListener(e,start);});
+    /* su telefono niente computer 3D (e niente download della libreria) */
+    if(W.matchMedia&&W.matchMedia('(max-width:860px)').matches){var c0=doc.getElementById('pc3d');if(c0)c0.remove();return;}
     if(W.THREE){initPC();return;}
     var sc=doc.createElement('script');sc.src='js/three.min.js';sc.async=true;sc.onload=initPC;
     sc.onerror=function(){var c=doc.getElementById('pc3d');if(c)c.remove();};
