@@ -56,7 +56,7 @@ Si possono aggiungere nuove domande in fondo a ogni gruppo.
 - [ ] Campagne pubblicitarie che non funzionano: gli errori più comuni
 
 ## Gestionali e CRM
-- [ ] CRM su misura: cos'è e quando serve a una piccola azienda
+- [x] 2026-11-20 CRM su misura: cos'è e quando serve a una piccola azienda
 - [ ] Dashboard aziendale: tenere sotto controllo i numeri in un colpo d'occhio
 - [ ] Excel non basta più? I segnali che serve un gestionale
 - [ ] Gestionale per appuntamenti e clienti: cosa deve fare
