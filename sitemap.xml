@@ -80,9 +80,15 @@
   </url>
   <url>
     <loc>https://www.ilariavisciglia.it/blog.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ilariavisciglia.it/blog/google-ads-o-meta-ads-quale-scegliere.html</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.ilariavisciglia.it/blog/crm-su-misura-cos-e-quando-serve.html</loc>

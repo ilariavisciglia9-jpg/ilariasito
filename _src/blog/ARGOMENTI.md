@@ -49,7 +49,7 @@ Si possono aggiungere nuove domande in fondo a ogni gruppo.
 - [ ] Vendere su Instagram e sul sito insieme
 
 ## Social e ADV
-- [ ] Google Ads o Meta Ads: quale scegliere per la tua attività
+- [x] 2026-11-21 Google Ads o Meta Ads: quale scegliere per la tua attività
 - [ ] Quanto investire in pubblicità online all'inizio
 - [ ] Gestione social: farla da sé o affidarla a un professionista?
 - [ ] Instagram per attività locali: cosa pubblicare
