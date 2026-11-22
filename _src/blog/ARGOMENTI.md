@@ -63,7 +63,7 @@ Si possono aggiungere nuove domande in fondo a ogni gruppo.
 
 ## Strategia digitale
 - [ ] Freelance o agenzia: chi scegliere per il tuo progetto digitale
-- [ ] Come misurare se il sito porta davvero clienti
+- [x] 2026-11-22 Come misurare se il sito porta davvero clienti
 - [ ] Presenza online per attività locali: la checklist completa
 - [ ] Come scrivere i testi del tuo sito (o farteli scrivere)
 - [ ] Pagare un sito a rate: come funziona
