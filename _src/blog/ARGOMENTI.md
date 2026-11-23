@@ -4,7 +4,7 @@ Si possono aggiungere nuove domande in fondo a ogni gruppo.
 
 ## Siti web
 - [x] 2026-11-18 Quanto costa un sito web professionale?
-- [ ] Sito web o solo pagina Instagram: cosa serve davvero a un'attività locale?
+- [x] 2026-11-23 Sito web o solo pagina Instagram: cosa serve davvero a un'attività locale?
 - [ ] Quanto tempo ci vuole per realizzare un sito web?
 - [ ] Cosa devo preparare prima di contattare un web designer?
 - [ ] Rifare il sito o fare un restyling? Come capirlo
