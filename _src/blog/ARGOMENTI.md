@@ -33,7 +33,7 @@ Si possono aggiungere nuove domande in fondo a ogni gruppo.
 
 ## Intelligenza artificiale
 - [x] 2026-11-18 Chatbot WhatsApp con intelligenza artificiale: cos'è e come funziona
-- [ ] Agente AI per le email: rispondere ai clienti in automatico
+- [x] 2026-11-24 Agente AI per le email: rispondere ai clienti in automatico
 - [ ] Come una piccola attività può usare l'AI senza complicarsi la vita
 - [ ] Chatbot sul sito: conviene davvero?
 - [ ] Automatizzare le prenotazioni con l'AI
