@@ -80,9 +80,15 @@
   </url>
   <url>
     <loc>https://www.ilariavisciglia.it/blog.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ilariavisciglia.it/blog/profilo-google-business-come-ottimizzarlo.html</loc>
+    <lastmod>2026-11-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.ilariavisciglia.it/blog/agente-ai-email-rispondere-ai-clienti.html</loc>

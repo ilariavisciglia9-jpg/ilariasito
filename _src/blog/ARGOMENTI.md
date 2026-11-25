@@ -22,7 +22,7 @@ Si possono aggiungere nuove domande in fondo a ogni gruppo.
 
 ## SEO e Google
 - [x] 2026-11-18 Perché il mio sito non compare su Google?
-- [ ] Profilo Google Business: come ottimizzarlo per farti trovare in zona
+- [x] 2026-11-25 Profilo Google Business: come ottimizzarlo per farti trovare in zona
 - [ ] Come ottenere più recensioni su Google (senza essere insistenti)
 - [ ] SEO locale: come comparire per "vicino a me"
 - [ ] Velocità del sito: perché conta e come misurarla
