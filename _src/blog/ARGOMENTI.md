@@ -44,7 +44,7 @@ Si possono aggiungere nuove domande in fondo a ogni gruppo.
 - [x] 2026-11-19 Aprire un e-commerce: da dove iniziare
 - [ ] Shopify o e-commerce su misura?
 - [ ] Pagamenti online: Stripe, PayPal, Klarna e Scalapay a confronto
-- [ ] Come far tornare i clienti sul tuo shop online
+- [x] 2026-11-26 Come far tornare i clienti sul tuo shop online
 - [ ] Schede prodotto che vendono: cosa scrivere e quali foto usare
 - [ ] Vendere su Instagram e sul sito insieme
 
