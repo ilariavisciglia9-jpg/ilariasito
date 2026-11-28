@@ -52,7 +52,7 @@ Si possono aggiungere nuove domande in fondo a ogni gruppo.
 - [x] 2026-11-21 Google Ads o Meta Ads: quale scegliere per la tua attività
 - [ ] Quanto investire in pubblicità online all'inizio
 - [ ] Gestione social: farla da sé o affidarla a un professionista?
-- [ ] Instagram per attività locali: cosa pubblicare
+- [x] 2026-11-28 Instagram per attività locali: cosa pubblicare
 - [ ] Campagne pubblicitarie che non funzionano: gli errori più comuni
 
 ## Gestionali e CRM
